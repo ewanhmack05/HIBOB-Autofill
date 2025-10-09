@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HiBob Project Filler</title>
+  <style>
+    body { font-family: system-ui, sans-serif; min-width: 300px; padding: 12px; background: #fafafa; }
+    h3 { margin: 0 0 10px 0; }
+    label { display: block; margin-top: 8px; font-weight: 600; }
+    input[type="text"], textarea {
+      width: 100%; box-sizing: border-box; padding: 6px; margin-top: 3px;
+      border: 1px solid #ccc; border-radius: 4px; font-size: 14px;
+    }
+    textarea { resize: vertical; }
+    button { margin-top: 12px; width: 100%; padding: 8px; background: rgb(70,136,136); border: none; color: #fff; font-weight: 600; border-radius: 4px; cursor: pointer; }
+    button:hover { background: #76AEAE; }
+    #autofillToggle { display: flex; align-items: center; gap: 6px; margin-top: 10px; }
+    #autofillToggle label { margin-top: 0; font-weight: 500; }
+  </style>
+</head>
+<body>
+  <h3>HiBob Project Filler</h3>
+
+  <label for="project">Project</label>
+  <input
+    id="project"
+    type="text"
+    placeholder="e.g. Smart Nano"
+    list="projectsList"
+    autocomplete="off"
+    spellcheck="false"
+  />
+
+  <label for="task">Project Task</label>
+  <input
+    id="task"
+    type="text"
+    placeholder="e.g. DP Platform"
+    list="tasksList"
+    autocomplete="off"
+    spellcheck="false"
+  />
+
+  <label for="reason">Reason</label>
+  <textarea id="reason" placeholder="e.g. Forgot to Clock In" rows="3"></textarea>
+
+  <div id="autofillToggle">
+    <input type="checkbox" id="autoFillCheckbox" />
+    <label for="autoFillCheckbox">Enable auto-fill</label>
+  </div>
+
+  <button id="save">Save Settings</button>
+  <button id="fill">Fill Now</button>
+
+  <!-- dynamic lists -->
+  <datalist id="projectsList"></datalist>
+  <datalist id="tasksList"></datalist>
+
+  <script src="popup.js"></script>
+</body>
+</html>
