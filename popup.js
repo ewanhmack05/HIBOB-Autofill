@@ -1,9 +1,9 @@
-// === popup.js (hardcoded projects + custom autosuggest + reason select) ===
+// === popup.js (autosuggest + reasons select + favourites with auto-fill) ===
 
 const byNorm = (s) => (s || "").trim().toLowerCase();
+let PROJECTS_CACHE = []; // [{ name, tasks: [{ name, isArchived? }] }]
 
-let PROJECTS_CACHE = [];
-
+// Elements
 const elProject = document.getElementById("project");
 const elTask = document.getElementById("task");
 const elReason = document.getElementById("reason");
@@ -13,25 +13,27 @@ const elFill = document.getElementById("fill");
 const elStatus = document.getElementById("status");
 const sugProject = document.getElementById("projectSuggest");
 const sugTask = document.getElementById("taskSuggest");
+const elFavSave = document.getElementById("favSave");
+const elFavChips = document.getElementById("favChips");
 
-// ---------------- Settings ----------------
+// ---------- Settings ----------
 async function loadSettings() {
   const data = await chrome.storage.sync.get(["project", "task", "reason", "autofillModal", "autoFillEnabled"]);
   const toggle = typeof data.autofillModal === "boolean" ? data.autofillModal : !!data.autoFillEnabled;
   elProject.value = data.project || "";
   elTask.value = data.task || "";
-  elReason.value = data.reason || ""; // select will default if empty
+  elReason.value = data.reason || "";
   elToggle.checked = toggle;
 }
 async function saveSettings() {
   const project = elProject.value.trim();
   const task = elTask.value.trim();
-  const reason = elReason.value; // from select
+  const reason = elReason.value;
   const toggle = elToggle.checked;
   await chrome.storage.sync.set({ project, task, reason, autofillModal: toggle, autoFillEnabled: toggle });
 }
 
-// ---------------- Trigger Fill ----------------
+// ---------- Fill ----------
 async function triggerFill() {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   if (!tab?.id) return;
@@ -45,7 +47,7 @@ async function triggerFill() {
   });
 }
 
-// ---------------- Load hardcoded projects ----------------
+// ---------- Hardcoded projects ----------
 async function loadHardcodedProjects() {
   try {
     const url = chrome.runtime.getURL("static-projects.json");
@@ -71,11 +73,11 @@ async function loadHardcodedProjects() {
   }
 }
 
-// ---------------- Autosuggest engine ----------------
+// ---------- Autosuggest ----------
 function makeAutosuggest(inputEl, panelEl, provider, onChoose) {
   let items = [];
   let active = -1;
-  const MAX = 8;
+  const MAX = 20;
 
   function close() {
     panelEl.classList.remove("open");
@@ -150,7 +152,7 @@ function makeAutosuggest(inputEl, panelEl, provider, onChoose) {
   return { close, recompute };
 }
 
-// ---------------- Providers ----------------
+// Providers
 function projectProvider(query) {
   const q = byNorm(query);
   const names = PROJECTS_CACHE.map((p) => p.name);
@@ -171,22 +173,122 @@ function taskProviderFactory(getProjectName) {
   };
 }
 
-// ---------------- Wire up ----------------
+// ---------- FAVOURITES (with auto-fill on click) ----------
+const FAV_KEY = "favorites"; // [{ id, label, project, task, reason, createdAt }]
+
+async function readFavourites() {
+  const { [FAV_KEY]: favs } = await chrome.storage.sync.get(FAV_KEY);
+  return Array.isArray(favs) ? favs : [];
+}
+async function writeFavourites(favs) {
+  await chrome.storage.sync.set({ [FAV_KEY]: favs });
+}
+
+function makeLabel(project, task) {
+  if (project && task) return `${project} — ${task}`;
+  return project || task || "Favourite";
+}
+
+async function saveFavouriteFromCurrent() {
+  const project = elProject.value.trim();
+  const task = elTask.value.trim();
+  const reason = elReason.value;
+
+  if (!project) {
+    elStatus.textContent = "Select a project before saving a favourite.";
+    return;
+  }
+
+  const favs = await readFavourites();
+  const exists = favs.find((f) => f.project === project && f.task === task && f.reason === reason);
+  if (exists) {
+    elStatus.textContent = "Already in favourites.";
+    return;
+  }
+
+  const fav = {
+    id: String(Date.now()),
+    label: makeLabel(project, task),
+    project,
+    task,
+    reason,
+    createdAt: Date.now(),
+  };
+
+  const next = [fav, ...favs].slice(0, 12);
+  await writeFavourites(next);
+  renderFavourites(next);
+  elStatus.textContent = "Saved to favourites.";
+}
+
+// NEW: click favourite => load, save, fill, close
+async function applyFavouriteAndFill(f) {
+  // 1) Load into fields
+  elProject.value = f.project || "";
+  elTask.value = f.task || "";
+  elReason.value = f.reason || "";
+
+  // 2) Persist selection so your content.js reads it
+  await chrome.storage.sync.set({
+    project: elProject.value.trim(),
+    task: elTask.value.trim(),
+    reason: elReason.value,
+  });
+
+  // 3) Trigger the fill in the active tab
+  await triggerFill();
+
+  // 4) Close popup
+  window.close();
+}
+
+async function deleteFavourite(id) {
+  const favs = await readFavourites();
+  const next = favs.filter((f) => f.id !== id);
+  await writeFavourites(next);
+  renderFavourites(next);
+}
+
+function renderFavourites(favs) {
+  elFavChips.innerHTML = "";
+  if (!Array.isArray(favs) || !favs.length) return;
+
+  favs.forEach((f) => {
+    const chip = document.createElement("div");
+    chip.className = "chip";
+    chip.title = `${f.project}${f.task ? " — " + f.task : ""}${f.reason ? " • " + f.reason : ""}`;
+    chip.textContent = f.label;
+
+    // Click chip => auto-fill
+    chip.addEventListener("click", (e) => {
+      e.preventDefault();
+      applyFavouriteAndFill(f);
+    });
+
+    // Remove button (does not fill)
+    const kill = document.createElement("span");
+    kill.className = "kill";
+    kill.textContent = "×";
+    kill.title = "Remove";
+    kill.addEventListener("click", async (e) => {
+      e.stopPropagation();
+      await deleteFavourite(f.id);
+    });
+
+    chip.appendChild(kill);
+    elFavChips.appendChild(chip);
+  });
+}
+
+// ---------- Wire up ----------
 document.addEventListener("DOMContentLoaded", async () => {
   await loadSettings();
   await loadHardcodedProjects();
 
-  // Project autosuggest
-  makeAutosuggest(
-    elProject,
-    sugProject,
-    projectProvider,
-    () => {
-      elTask.value = "";
-    } // reset task when project changes
-  );
-
-  // Task autosuggest depends on selected project
+  // Autosuggest
+  makeAutosuggest(elProject, sugProject, projectProvider, () => {
+    elTask.value = "";
+  });
   makeAutosuggest(
     elTask,
     sugTask,
@@ -194,6 +296,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     () => {}
   );
 
+  // Favourites
+  elFavSave.addEventListener("click", saveFavouriteFromCurrent);
+  renderFavourites(await readFavourites());
+
+  // Save/Fill buttons
   elSave.addEventListener("click", async () => {
     await saveSettings();
     window.close();

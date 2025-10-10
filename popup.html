@@ -16,9 +16,8 @@
     }
     * { box-sizing: border-box; }
     body {
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      min-width: 320px;
-      margin: 0; padding: 14px;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      min-width: 320px; margin: 0; padding: 14px;
       color: var(--text);
       background: linear-gradient(180deg, #fbfbfd 0%, var(--bg) 100%);
     }
@@ -37,6 +36,8 @@
       background: #fff; font-size: 14px; outline: none; transition: border-color .15s, box-shadow .15s;
     }
     .input:focus, select.input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(70,136,136,0.12); }
+
+    /* Suggest panel */
     .suggest {
       position: absolute; z-index: 9999; left: 0; right: 0; top: calc(100% + 6px);
       background: #fff; border: 1px solid var(--border); border-radius: 10px; box-shadow: var(--shadow);
@@ -45,6 +46,7 @@
     .suggest.open { display: block; }
     .option { padding: 8px 10px; border-radius: 8px; cursor: pointer; font-size: 14px; line-height: 1.2; }
     .option:hover, .option.active { background: #f0f7f7; }
+
     .muted { font-size: 12px; color: var(--muted); margin-top: 8px; }
     .row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
     .btn {
@@ -54,6 +56,29 @@
     .btn:active { transform: translateY(1px); }
     .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
     .toggle { display: flex; align-items: center; gap: 8px; margin-top: 10px; color: var(--muted); font-size: 13px; }
+
+    /* Favourites */
+    .favRow {
+      display: flex; align-items: center; gap: 8px; margin-top: 12px; flex-wrap: wrap;
+    }
+    .favBtn {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #fff; border: 1px dashed var(--accent); color: var(--accent);
+      border-radius: 999px; padding: 6px 10px; cursor: pointer; font-weight: 600; font-size: 13px;
+    }
+    .chips {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px;
+    }
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #eef6f6; color: #145;
+      border: 1px solid #d7e8e8; border-radius: 999px; padding: 6px 10px; font-size: 12px; cursor: pointer;
+    }
+    .chip .kill {
+      display: inline-block; width: 18px; height: 18px; line-height: 18px;
+      text-align: center; border-radius: 50%; background: #fff; border: 1px solid #cfdcdc; color: #456; font-weight: 700;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -81,6 +106,11 @@
         <option>Other, see notes</option>
       </select>
     </div>
+
+    <div class="favRow">
+      <button id="favSave" class="favBtn" title="Save current Project/Task/Reason as a favourite">⭐ Save current as favourite</button>
+    </div>
+    <div id="favChips" class="chips"></div>
 
     <label class="toggle">
       <input type="checkbox" id="autoFillCheckbox" />

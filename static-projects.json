@@ -1,1483 +1,1511 @@
 {
   "results": [
     {
-      "clientId": 14435388,
-      "color": "color1_light",
       "name": "AAPSP",
-      "description": null,
-      "id": 16038447,
-      "taskIds": [15411120, 15411107, 14434918],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434918, "isArchived": false, "name": "Customer Support- Path XL General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Path XL General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435389,
-      "color": "color3_dark",
       "name": "ACL",
-      "description": null,
-      "id": 16038359,
-      "taskIds": [14435275, 15411120, 21594445, 14434920, 15411107],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14435275, "isArchived": false, "name": "Account Management", "billable": true },
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 21594445, "isArchived": false, "name": "Service Days", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Account Management"
+        },
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Service Days"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435384,
-      "color": "color6_base",
       "name": "ACPCC",
-      "description": null,
-      "id": 16038430,
-      "taskIds": [21594445, 15411120, 15411107, 14434920],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 21594445, "isArchived": false, "name": "Service Days", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Service Days"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435383,
-      "color": "color8_base",
       "name": "AMC (Amsterdam)",
-      "description": null,
-      "id": 16038396,
-      "taskIds": [15411120, 15411107, 14435275, 14434918],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14435275, "isArchived": false, "name": "Account Management", "billable": true },
-        { "id": 14434918, "isArchived": false, "name": "Customer Support- Path XL General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Account Management"
+        },
+        {
+          "name": "Customer Support- Path XL General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435381,
-      "color": "color7_dark",
       "name": "Aalborg University",
-      "description": null,
-      "id": 16038268,
-      "taskIds": [15411120, 15411107, 14434918],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434918, "isArchived": false, "name": "Customer Support- Path XL General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Path XL General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": null,
-      "color": "color3_dark",
       "name": "Breaks",
-      "description": "Time code for recording - 15 min paid break",
-      "id": 21649089,
-      "taskIds": [],
-      "billable": false,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": []
     },
     {
-      "clientId": 14435393,
-      "color": "color1_lighter",
       "name": "Cardiff University",
-      "description": null,
-      "id": 16038495,
-      "taskIds": [15411120, 15411107, 14434918],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434918, "isArchived": false, "name": "Customer Support- Path XL General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Path XL General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435394,
-      "color": "color2_dark",
       "name": "Cefas",
-      "description": null,
-      "id": 16038528,
-      "taskIds": [15411120, 15411107, 14434918],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434918, "isArchived": false, "name": "Customer Support- Path XL General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Path XL General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435395,
-      "color": "color4_light",
       "name": "Copenhagen Professional College",
-      "description": null,
-      "id": 16038503,
-      "taskIds": [15411120, 15411107, 14434918],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434918, "isArchived": false, "name": "Customer Support- Path XL General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Path XL General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": null,
-      "color": "color9_base",
       "name": "Customer Support",
-      "description": null,
-      "id": 15393130,
-      "taskIds": [14434929, 14434850, 15411120, 14434925, 15411107],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434929, "isArchived": false, "name": "Customer Support - Asylia General", "billable": true },
-        { "id": 14434925, "isArchived": false, "name": "Customer Support- Imaging General", "billable": true },
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support - Asylia General"
+        },
+        {
+          "name": "Customer Support- Imaging General"
+        },
+        {
+          "name": "General Meetings"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": null,
-      "color": "color1_lighter",
       "name": "DCP Development",
-      "description": null,
-      "id": 16345883,
-      "taskIds": [16346084, 16345518, 14434850, 16345502, 16345516, 16345503, 16345592, 16345522],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false },
-        { "id": 16345592, "isArchived": false, "name": "Product Development", "billable": false },
-        { "id": 16345502, "isArchived": false, "name": "Product Management", "billable": false },
-        { "id": 16345503, "isArchived": false, "name": "Release Management", "billable": false },
-        { "id": 16345516, "isArchived": false, "name": "Test Automation", "billable": false },
-        { "id": 16346084, "isArchived": false, "name": "UX", "billable": false },
-        { "id": 16345518, "isArchived": false, "name": "Validation", "billable": true },
-        { "id": 16345522, "isArchived": false, "name": "Verification", "billable": false }
+        {
+          "name": "General Meetings"
+        },
+        {
+          "name": "Product Development"
+        },
+        {
+          "name": "Product Management"
+        },
+        {
+          "name": "Release Management"
+        },
+        {
+          "name": "Test Automation"
+        },
+        {
+          "name": "UX"
+        },
+        {
+          "name": "Validation"
+        },
+        {
+          "name": "Verification"
+        }
       ]
     },
     {
-      "clientId": 14435398,
-      "color": "color5_light",
       "name": "Eurofins",
-      "description": null,
-      "id": 16038536,
-      "taskIds": [21594445, 15411120, 15411107, 14434920],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 21594445, "isArchived": false, "name": "Service Days", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Service Days"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": null,
-      "color": "color8_base",
       "name": "Finance & Admin",
-      "description": null,
-      "id": 16345180,
-      "taskIds": [14434771, 14434846, 14434841, 14434850, 14434772, 21395691, 14434818, 14434843, 14434857, 14434836],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434818, "isArchived": false, "name": "Finance", "billable": false },
-        { "id": 14434771, "isArchived": false, "name": "General Admin", "billable": false },
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false },
-        { "id": 14434857, "isArchived": false, "name": "Health & Safety", "billable": false },
-        { "id": 14434772, "isArchived": false, "name": "IT Maintenance &Support", "billable": false },
-        { "id": 21395691, "isArchived": false, "name": "Knowledge Sharing Sessions", "billable": false },
-        { "id": 14434846, "isArchived": false, "name": "People Management", "billable": false },
-        { "id": 14434836, "isArchived": false, "name": "Strategy", "billable": false },
-        { "id": 14434841, "isArchived": false, "name": "Training", "billable": false },
-        { "id": 14434843, "isArchived": false, "name": "Travel", "billable": false }
+        {
+          "name": "Finance"
+        },
+        {
+          "name": "General Admin"
+        },
+        {
+          "name": "General Meetings"
+        },
+        {
+          "name": "Health & Safety"
+        },
+        {
+          "name": "IT Maintenance &Support"
+        },
+        {
+          "name": "Knowledge Sharing Sessions"
+        },
+        {
+          "name": "People Management"
+        },
+        {
+          "name": "Strategy"
+        },
+        {
+          "name": "Training"
+        },
+        {
+          "name": "Travel"
+        }
       ]
     },
     {
-      "clientId": null,
-      "color": "color9_darker",
       "name": "General Operations",
-      "description": null,
-      "id": 15393112,
-      "taskIds": [16345886, 14434771, 14434846, 14434841, 14434850, 14434843],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434771, "isArchived": false, "name": "General Admin", "billable": false },
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false },
-        { "id": 16345886, "isArchived": false, "name": "PMO", "billable": false },
-        { "id": 14434846, "isArchived": false, "name": "People Management", "billable": false },
-        { "id": 14434841, "isArchived": false, "name": "Training", "billable": false },
-        { "id": 14434843, "isArchived": false, "name": "Travel", "billable": false }
+        {
+          "name": "General Admin"
+        },
+        {
+          "name": "General Meetings"
+        },
+        {
+          "name": "PMO"
+        },
+        {
+          "name": "People Management"
+        },
+        {
+          "name": "Training"
+        },
+        {
+          "name": "Travel"
+        }
       ]
     },
     {
-      "clientId": 14435418,
-      "color": "color4_base",
       "name": "HHB",
-      "description": null,
-      "id": 16131189,
-      "taskIds": [21594445, 15411120, 15411107, 14434920],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 21594445, "isArchived": false, "name": "Service Days", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Service Days"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435400,
-      "color": "color9_dark",
       "name": "HSFC",
-      "description": null,
-      "id": 16038622,
-      "taskIds": [21594445, 15411120, 15411107, 14434920],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 21594445, "isArchived": false, "name": "Service Days", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Service Days"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435404,
-      "color": "color4_darker",
       "name": "IQVIA (Q2)",
-      "description": null,
-      "id": 16038768,
-      "taskIds": [21594445, 15411120, 15411107, 14434920],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 21594445, "isArchived": false, "name": "Service Days", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Service Days"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435404,
-      "color": "color4_base",
       "name": "IQVIA Discovery project",
-      "description": "Discovery project to understand implications for planned move to the cloud",
-      "id": 16858955,
-      "taskIds": [16133175],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
-      "tasks": [{ "id": 16133175, "isArchived": false, "name": "Discovery", "billable": true }]
+      "tasks": [
+        {
+          "name": "Discovery"
+        }
+      ]
     },
     {
-      "clientId": 14435402,
-      "color": "color2_light",
       "name": "Infohealth (WA)",
-      "description": null,
-      "id": 16038753,
-      "taskIds": [15411120, 15411107, 14434920],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435406,
-      "color": "color6_darker",
       "name": "Lifelabs",
-      "description": null,
-      "id": 16038799,
-      "taskIds": [21594445, 15411120, 15411107, 14434920],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 21594445, "isArchived": false, "name": "Service Days", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Service Days"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435414,
-      "color": "color3_dark",
       "name": "MIS",
-      "description": null,
-      "id": 16132846,
-      "taskIds": [15411120, 15411107, 14434925],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434925, "isArchived": false, "name": "Customer Support- Imaging General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Imaging General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435410,
-      "color": "color3_base",
       "name": "Mater Pathology",
-      "description": null,
-      "id": 16038821,
-      "taskIds": [21594445, 15411120, 15411107, 14434920],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 21594445, "isArchived": false, "name": "Service Days", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Service Days"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435415,
-      "color": "color1_dark",
       "name": "Monogram",
-      "description": null,
-      "id": 16038850,
-      "taskIds": [21594445, 15411120, 15411107, 14434920],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 21594445, "isArchived": false, "name": "Service Days", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Service Days"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435417,
-      "color": "color7_light",
       "name": "NHS Cornwall",
-      "description": null,
-      "id": 16044365,
-      "taskIds": [21594445, 15411120, 15411107, 14434920],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 21594445, "isArchived": false, "name": "Service Days", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Service Days"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435417,
-      "color": "color1_light",
       "name": "NHS Cornwall ULTRA Cloud Install",
-      "description": null,
-      "id": 16133438,
-      "taskIds": [
-        16133203, 16133184, 22544437, 16133170, 16133197, 14434850, 16133175, 16133221, 16133169, 16133198, 16133194, 16133246, 16133172, 16133252, 16133199
-      ],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [
-          { "fieldPath": "/work/customColumns/column_1747225863016", "operator": "text_equals", "values": ["263728641", "263728642", "263728644"] }
-        ],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 16133169, "isArchived": false, "name": "Clinical configuration", "billable": true },
-        { "id": 16133170, "isArchived": false, "name": "Clinician Portal", "billable": true },
-        { "id": 16133172, "isArchived": false, "name": "Data Migration", "billable": true },
-        { "id": 22544437, "isArchived": false, "name": "Data Services", "billable": true },
-        { "id": 16133175, "isArchived": false, "name": "Discovery", "billable": true },
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false },
-        { "id": 16133252, "isArchived": false, "name": "Georges", "billable": true },
-        { "id": 16133184, "isArchived": false, "name": "Hypercare", "billable": true },
-        { "id": 16133194, "isArchived": false, "name": "Installation", "billable": true },
-        { "id": 16133197, "isArchived": false, "name": "Integration", "billable": true },
-        { "id": 16133198, "isArchived": false, "name": "Production & Go-Live", "billable": true },
-        { "id": 16133199, "isArchived": false, "name": "Project Initiation & Mobilisation", "billable": true },
-        { "id": 16133203, "isArchived": false, "name": "Project Management", "billable": true },
-        { "id": 16133246, "isArchived": false, "name": "System Training", "billable": true },
-        { "id": 16133221, "isArchived": false, "name": "Validation & UAT Support", "billable": true }
+        {
+          "name": "Clinical configuration"
+        },
+        {
+          "name": "Clinician Portal"
+        },
+        {
+          "name": "Data Migration"
+        },
+        {
+          "name": "Data Services"
+        },
+        {
+          "name": "Discovery"
+        },
+        {
+          "name": "General Meetings"
+        },
+        {
+          "name": "Georges"
+        },
+        {
+          "name": "Hypercare"
+        },
+        {
+          "name": "Installation"
+        },
+        {
+          "name": "Integration"
+        },
+        {
+          "name": "Production & Go-Live"
+        },
+        {
+          "name": "Project Initiation & Mobilisation"
+        },
+        {
+          "name": "Project Management"
+        },
+        {
+          "name": "System Training"
+        },
+        {
+          "name": "Validation & UAT Support"
+        }
       ]
     },
     {
-      "clientId": 14435417,
-      "color": "color9_base",
       "name": "NHS Cornwall- eCare Interface",
-      "description": "eCare Interface",
-      "id": 21791951,
-      "taskIds": [16133203, 18143162, 16133197, 14434850, 16133169],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 18143162, "isArchived": false, "name": "Analyser Installation", "billable": true },
-        { "id": 16133169, "isArchived": false, "name": "Clinical configuration", "billable": true },
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false },
-        { "id": 16133197, "isArchived": false, "name": "Integration", "billable": true },
-        { "id": 16133203, "isArchived": false, "name": "Project Management", "billable": true }
+        {
+          "name": "Analyser Installation"
+        },
+        {
+          "name": "Clinical configuration"
+        },
+        {
+          "name": "General Meetings"
+        },
+        {
+          "name": "Integration"
+        },
+        {
+          "name": "Project Management"
+        }
       ]
     },
     {
-      "clientId": 14435423,
-      "color": "color2_light",
       "name": "NHS Wirral",
-      "description": null,
-      "id": 16131281,
-      "taskIds": [21594445, 15411120, 15411107, 14434920],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 21594445, "isArchived": false, "name": "Service Days", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Service Days"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435428,
-      "color": "color3_dark",
       "name": "NUH - Tutor",
-      "description": null,
-      "id": 16131373,
-      "taskIds": [15411120, 15411107, 14434918],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434918, "isArchived": false, "name": "Customer Support- Path XL General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Path XL General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435430,
-      "color": "color9_dark",
       "name": "NUIG",
-      "description": null,
-      "id": 16131444,
-      "taskIds": [15411120, 15411107, 14434918],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434918, "isArchived": false, "name": "Customer Support- Path XL General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Path XL General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435424,
-      "color": "color1_light",
       "name": "North Bristol NHS Trust",
-      "description": null,
-      "id": 16131322,
-      "taskIds": [21594445, 15411120, 15411107, 14434920],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 21594445, "isArchived": false, "name": "Service Days", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Service Days"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435425,
-      "color": "color5_base",
       "name": "Northern Hospital",
-      "description": null,
-      "id": 16131341,
-      "taskIds": [21594445, 15411120, 15411107, 14434920],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 21594445, "isArchived": false, "name": "Service Days", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Service Days"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435425,
-      "color": "color3_light",
       "name": "Northern ULTRA Upgrade",
-      "description": null,
-      "id": 16133518,
-      "taskIds": [16133203, 16133184, 16133170, 16133197, 14434850, 16133175, 16133221, 16133169, 16133198, 16133194, 16133246, 16133172, 16133252, 16133199],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [
-          { "fieldPath": "/work/customColumns/column_1747225863016", "operator": "text_equals", "values": ["263728641", "263728642", "263728644"] }
-        ],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 16133169, "isArchived": false, "name": "Clinical configuration", "billable": true },
-        { "id": 16133170, "isArchived": false, "name": "Clinician Portal", "billable": true },
-        { "id": 16133172, "isArchived": false, "name": "Data Migration", "billable": true },
-        { "id": 16133175, "isArchived": false, "name": "Discovery", "billable": true },
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false },
-        { "id": 16133252, "isArchived": false, "name": "Georges", "billable": true },
-        { "id": 16133184, "isArchived": false, "name": "Hypercare", "billable": true },
-        { "id": 16133194, "isArchived": false, "name": "Installation", "billable": true },
-        { "id": 16133197, "isArchived": false, "name": "Integration", "billable": true },
-        { "id": 16133198, "isArchived": false, "name": "Production & Go-Live", "billable": true },
-        { "id": 16133199, "isArchived": false, "name": "Project Initiation & Mobilisation", "billable": true },
-        { "id": 16133203, "isArchived": false, "name": "Project Management", "billable": true },
-        { "id": 16133246, "isArchived": false, "name": "System Training", "billable": true },
-        { "id": 16133221, "isArchived": false, "name": "Validation & UAT Support", "billable": true }
+        {
+          "name": "Clinical configuration"
+        },
+        {
+          "name": "Clinician Portal"
+        },
+        {
+          "name": "Data Migration"
+        },
+        {
+          "name": "Discovery"
+        },
+        {
+          "name": "General Meetings"
+        },
+        {
+          "name": "Georges"
+        },
+        {
+          "name": "Hypercare"
+        },
+        {
+          "name": "Installation"
+        },
+        {
+          "name": "Integration"
+        },
+        {
+          "name": "Production & Go-Live"
+        },
+        {
+          "name": "Project Initiation & Mobilisation"
+        },
+        {
+          "name": "Project Management"
+        },
+        {
+          "name": "System Training"
+        },
+        {
+          "name": "Validation & UAT Support"
+        }
       ]
     },
     {
-      "clientId": 14435427,
-      "color": "color4_darker",
       "name": "Nottingham & Sherwood",
-      "description": null,
-      "id": 16131356,
-      "taskIds": [21594445, 15411120, 15411107, 14434920],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 21594445, "isArchived": false, "name": "Service Days", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Service Days"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435427,
-      "color": "color1_lighter",
       "name": "Notts & Sher ULTRA Cloud Install",
-      "description": null,
-      "id": 16133452,
-      "taskIds": [
-        16133203, 16133184, 22544437, 16133170, 16133197, 14434850, 16133175, 16133221, 16133169, 16133198, 16133194, 16133246, 16133172, 16133252, 16133199
-      ],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [
-          { "fieldPath": "/work/customColumns/column_1747225863016", "operator": "text_equals", "values": ["263728641", "263728642", "263728644"] }
-        ],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 16133169, "isArchived": false, "name": "Clinical configuration", "billable": true },
-        { "id": 16133170, "isArchived": false, "name": "Clinician Portal", "billable": true },
-        { "id": 16133172, "isArchived": false, "name": "Data Migration", "billable": true },
-        { "id": 22544437, "isArchived": false, "name": "Data Services", "billable": true },
-        { "id": 16133175, "isArchived": false, "name": "Discovery", "billable": true },
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false },
-        { "id": 16133252, "isArchived": false, "name": "Georges", "billable": true },
-        { "id": 16133184, "isArchived": false, "name": "Hypercare", "billable": true },
-        { "id": 16133194, "isArchived": false, "name": "Installation", "billable": true },
-        { "id": 16133197, "isArchived": false, "name": "Integration", "billable": true },
-        { "id": 16133198, "isArchived": false, "name": "Production & Go-Live", "billable": true },
-        { "id": 16133199, "isArchived": false, "name": "Project Initiation & Mobilisation", "billable": true },
-        { "id": 16133203, "isArchived": false, "name": "Project Management", "billable": true },
-        { "id": 16133246, "isArchived": false, "name": "System Training", "billable": true },
-        { "id": 16133221, "isArchived": false, "name": "Validation & UAT Support", "billable": true }
+        {
+          "name": "Clinical configuration"
+        },
+        {
+          "name": "Clinician Portal"
+        },
+        {
+          "name": "Data Migration"
+        },
+        {
+          "name": "Data Services"
+        },
+        {
+          "name": "Discovery"
+        },
+        {
+          "name": "General Meetings"
+        },
+        {
+          "name": "Georges"
+        },
+        {
+          "name": "Hypercare"
+        },
+        {
+          "name": "Installation"
+        },
+        {
+          "name": "Integration"
+        },
+        {
+          "name": "Production & Go-Live"
+        },
+        {
+          "name": "Project Initiation & Mobilisation"
+        },
+        {
+          "name": "Project Management"
+        },
+        {
+          "name": "System Training"
+        },
+        {
+          "name": "Validation & UAT Support"
+        }
       ]
     },
     {
-      "clientId": 14435429,
-      "color": "color3_base",
       "name": "Nuffield Analyser Upgrade",
-      "description": null,
-      "id": 18143147,
-      "taskIds": [18143175, 18143162, 16133203],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 18143162, "isArchived": false, "name": "Analyser Installation", "billable": true },
-        { "id": 18143175, "isArchived": false, "name": "Clinical Testing", "billable": true },
-        { "id": 16133203, "isArchived": false, "name": "Project Management", "billable": true }
+        {
+          "name": "Analyser Installation"
+        },
+        {
+          "name": "Clinical Testing"
+        },
+        {
+          "name": "Project Management"
+        }
       ]
     },
     {
-      "clientId": 14435429,
-      "color": "color9_darker",
       "name": "Nuffield Health",
-      "description": null,
-      "id": 16131401,
-      "taskIds": [21594445, 15411120, 15411107, 14434920],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 21594445, "isArchived": false, "name": "Service Days", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Service Days"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435429,
-      "color": "color4_light",
       "name": "Nuffield ULTRA Cloud Install",
-      "description": null,
-      "id": 21553069,
-      "taskIds": [
-        16133203, 16133184, 22544437, 16133170, 16133197, 14434850, 16133175, 16133221, 16133169, 16133198, 16133194, 16133246, 16133172, 16133252, 16133199
-      ],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [
-          { "fieldPath": "/work/customColumns/column_1747225863016", "operator": "text_equals", "values": ["263728641", "263728642", "263728644"] }
-        ],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 16133169, "isArchived": false, "name": "Clinical configuration", "billable": true },
-        { "id": 16133170, "isArchived": false, "name": "Clinician Portal", "billable": true },
-        { "id": 16133172, "isArchived": false, "name": "Data Migration", "billable": true },
-        { "id": 22544437, "isArchived": false, "name": "Data Services", "billable": true },
-        { "id": 16133175, "isArchived": false, "name": "Discovery", "billable": true },
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false },
-        { "id": 16133252, "isArchived": false, "name": "Georges", "billable": true },
-        { "id": 16133184, "isArchived": false, "name": "Hypercare", "billable": true },
-        { "id": 16133194, "isArchived": false, "name": "Installation", "billable": true },
-        { "id": 16133197, "isArchived": false, "name": "Integration", "billable": true },
-        { "id": 16133198, "isArchived": false, "name": "Production & Go-Live", "billable": true },
-        { "id": 16133199, "isArchived": false, "name": "Project Initiation & Mobilisation", "billable": true },
-        { "id": 16133203, "isArchived": false, "name": "Project Management", "billable": true },
-        { "id": 16133246, "isArchived": false, "name": "System Training", "billable": true },
-        { "id": 16133221, "isArchived": false, "name": "Validation & UAT Support", "billable": true }
+        {
+          "name": "Clinical configuration"
+        },
+        {
+          "name": "Clinician Portal"
+        },
+        {
+          "name": "Data Migration"
+        },
+        {
+          "name": "Data Services"
+        },
+        {
+          "name": "Discovery"
+        },
+        {
+          "name": "General Meetings"
+        },
+        {
+          "name": "Georges"
+        },
+        {
+          "name": "Hypercare"
+        },
+        {
+          "name": "Installation"
+        },
+        {
+          "name": "Integration"
+        },
+        {
+          "name": "Production & Go-Live"
+        },
+        {
+          "name": "Project Initiation & Mobilisation"
+        },
+        {
+          "name": "Project Management"
+        },
+        {
+          "name": "System Training"
+        },
+        {
+          "name": "Validation & UAT Support"
+        }
       ]
     },
     {
-      "clientId": 14435431,
-      "color": "color9_base",
       "name": "Omega Diagnostics",
-      "description": null,
-      "id": 16131456,
-      "taskIds": [21594445, 15411120, 15411107, 14434918],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434918, "isArchived": false, "name": "Customer Support- Path XL General", "billable": true },
-        { "id": 21594445, "isArchived": false, "name": "Service Days", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Path XL General"
+        },
+        {
+          "name": "Service Days"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": null,
-      "color": "color6_base",
       "name": "Operations - Imaging",
-      "description": null,
-      "id": 16132940,
-      "taskIds": [14434908, 16132925, 16132924, 14434841, 14434850, 16132923, 14434907],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 16132923, "isArchived": false, "name": "CoreLite Production", "billable": false },
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false },
-        { "id": 16132924, "isArchived": false, "name": "PathLite Production", "billable": false },
-        { "id": 14434908, "isArchived": false, "name": "QARA General", "billable": false },
-        { "id": 14434907, "isArchived": false, "name": "QARA Internal Audits", "billable": false },
-        { "id": 16132925, "isArchived": false, "name": "Solas OR Production", "billable": false },
-        { "id": 14434841, "isArchived": false, "name": "Training", "billable": false }
+        {
+          "name": "CoreLite Production"
+        },
+        {
+          "name": "General Meetings"
+        },
+        {
+          "name": "PathLite Production"
+        },
+        {
+          "name": "QARA General"
+        },
+        {
+          "name": "QARA Internal Audits"
+        },
+        {
+          "name": "Solas OR Production"
+        },
+        {
+          "name": "Training"
+        }
       ]
     },
     {
-      "clientId": 14435432,
-      "color": "color4_light",
       "name": "PAH",
-      "description": null,
-      "id": 16131499,
-      "taskIds": [21594445, 15411120, 15411107, 14434920],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 21594445, "isArchived": false, "name": "Service Days", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Service Days"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435436,
-      "color": "color2_dark",
       "name": "PFM",
-      "description": null,
-      "id": 16132822,
-      "taskIds": [15411120, 15411107, 14434925],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434925, "isArchived": false, "name": "Customer Support- Imaging General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Imaging General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435433,
-      "color": "color7_light",
       "name": "Papworth",
-      "description": null,
-      "id": 16131597,
-      "taskIds": [15411120, 15411107, 14434920],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435434,
-      "color": "color3_darker",
       "name": "PathLinks",
-      "description": null,
-      "id": 16131633,
-      "taskIds": [21594445, 15411120, 15411107, 14434920],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 21594445, "isArchived": false, "name": "Service Days", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Service Days"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435434,
-      "color": "color5_base",
       "name": "PathLinks ULTRA Cloud Install",
-      "description": null,
-      "id": 16133294,
-      "taskIds": [
-        16133203, 16133184, 22544437, 16133170, 16133197, 14434850, 16133175, 16133221, 16133169, 16133198, 16133194, 16133246, 16133172, 16133252, 16133199
-      ],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [
-          { "fieldPath": "/work/customColumns/column_1747225863016", "operator": "text_equals", "values": ["263728641", "263728642", "263728644"] }
-        ],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 16133169, "isArchived": false, "name": "Clinical configuration", "billable": true },
-        { "id": 16133170, "isArchived": false, "name": "Clinician Portal", "billable": true },
-        { "id": 16133172, "isArchived": false, "name": "Data Migration", "billable": true },
-        { "id": 22544437, "isArchived": false, "name": "Data Services", "billable": true },
-        { "id": 16133175, "isArchived": false, "name": "Discovery", "billable": true },
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false },
-        { "id": 16133252, "isArchived": false, "name": "Georges", "billable": true },
-        { "id": 16133184, "isArchived": false, "name": "Hypercare", "billable": true },
-        { "id": 16133194, "isArchived": false, "name": "Installation", "billable": true },
-        { "id": 16133197, "isArchived": false, "name": "Integration", "billable": true },
-        { "id": 16133198, "isArchived": false, "name": "Production & Go-Live", "billable": true },
-        { "id": 16133199, "isArchived": false, "name": "Project Initiation & Mobilisation", "billable": true },
-        { "id": 16133203, "isArchived": false, "name": "Project Management", "billable": true },
-        { "id": 16133246, "isArchived": false, "name": "System Training", "billable": true },
-        { "id": 16133221, "isArchived": false, "name": "Validation & UAT Support", "billable": true }
+        {
+          "name": "Clinical configuration"
+        },
+        {
+          "name": "Clinician Portal"
+        },
+        {
+          "name": "Data Migration"
+        },
+        {
+          "name": "Data Services"
+        },
+        {
+          "name": "Discovery"
+        },
+        {
+          "name": "General Meetings"
+        },
+        {
+          "name": "Georges"
+        },
+        {
+          "name": "Hypercare"
+        },
+        {
+          "name": "Installation"
+        },
+        {
+          "name": "Integration"
+        },
+        {
+          "name": "Production & Go-Live"
+        },
+        {
+          "name": "Project Initiation & Mobilisation"
+        },
+        {
+          "name": "Project Management"
+        },
+        {
+          "name": "System Training"
+        },
+        {
+          "name": "Validation & UAT Support"
+        }
       ]
     },
     {
-      "clientId": null,
-      "color": "color1_light",
       "name": "People Management",
-      "description": null,
-      "id": 17913677,
-      "taskIds": [14434850, 14434846, 14434841, 14434771],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434771, "isArchived": false, "name": "General Admin", "billable": false },
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false },
-        { "id": 14434846, "isArchived": false, "name": "People Management", "billable": false },
-        { "id": 14434841, "isArchived": false, "name": "Training", "billable": false }
+        {
+          "name": "General Admin"
+        },
+        {
+          "name": "General Meetings"
+        },
+        {
+          "name": "People Management"
+        },
+        {
+          "name": "Training"
+        }
       ]
     },
     {
-      "clientId": null,
-      "color": "color3_dark",
       "name": "Portal Development",
-      "description": null,
-      "id": 16345582,
-      "taskIds": [16346084, 16345518, 14434850, 16345502, 16345516, 16345503, 16345592, 16345522],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false },
-        { "id": 16345592, "isArchived": false, "name": "Product Development", "billable": false },
-        { "id": 16345502, "isArchived": false, "name": "Product Management", "billable": false },
-        { "id": 16345503, "isArchived": false, "name": "Release Management", "billable": false },
-        { "id": 16345516, "isArchived": false, "name": "Test Automation", "billable": false },
-        { "id": 16346084, "isArchived": false, "name": "UX", "billable": false },
-        { "id": 16345518, "isArchived": false, "name": "Validation", "billable": true },
-        { "id": 16345522, "isArchived": false, "name": "Verification", "billable": false }
+        {
+          "name": "General Meetings"
+        },
+        {
+          "name": "Product Development"
+        },
+        {
+          "name": "Product Management"
+        },
+        {
+          "name": "Release Management"
+        },
+        {
+          "name": "Test Automation"
+        },
+        {
+          "name": "UX"
+        },
+        {
+          "name": "Validation"
+        },
+        {
+          "name": "Verification"
+        }
       ]
     },
     {
-      "clientId": 14435438,
-      "color": "color7_dark",
       "name": "QUB",
-      "description": null,
-      "id": 16131707,
-      "taskIds": [15411120, 15411107, 14434918],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434918, "isArchived": false, "name": "Customer Support- Path XL General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Path XL General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": null,
-      "color": "color4_dark",
       "name": "Quality & Regulatory Affairs",
-      "description": null,
-      "id": 16345210,
-      "taskIds": [14434908, 14434771, 14434850, 14434909, 16345211, 14434901, 14434907],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434771, "isArchived": false, "name": "General Admin", "billable": false },
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false },
-        { "id": 14434909, "isArchived": false, "name": "Internal Validation", "billable": false },
-        { "id": 16345211, "isArchived": false, "name": "Internal Verification", "billable": false },
-        { "id": 14434901, "isArchived": false, "name": "QARA External Audits", "billable": false },
-        { "id": 14434908, "isArchived": false, "name": "QARA General", "billable": false },
-        { "id": 14434907, "isArchived": false, "name": "QARA Internal Audits", "billable": false }
+        {
+          "name": "General Admin"
+        },
+        {
+          "name": "General Meetings"
+        },
+        {
+          "name": "Internal Validation"
+        },
+        {
+          "name": "Internal Verification"
+        },
+        {
+          "name": "QARA External Audits"
+        },
+        {
+          "name": "QARA General"
+        },
+        {
+          "name": "QARA Internal Audits"
+        }
       ]
     },
     {
-      "clientId": 14435439,
-      "color": "color6_base",
       "name": "RUHB",
-      "description": null,
-      "id": 16131884,
-      "taskIds": [21594445, 15411120, 15411107, 14434920],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 21594445, "isArchived": false, "name": "Service Days", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Service Days"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435439,
-      "color": "color5_base",
       "name": "RUHB ULTRA 4.9 Upgrade",
-      "description": null,
-      "id": 16133338,
-      "taskIds": [16133203, 16133184, 16133170, 16133197, 14434850, 16133175, 16133221, 16133169, 16133198, 16133194, 16133246, 16133172, 16133252, 16133199],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [
-          { "fieldPath": "/work/customColumns/column_1747225863016", "operator": "text_equals", "values": ["263728641", "263728642", "263728644"] }
-        ],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 16133169, "isArchived": false, "name": "Clinical configuration", "billable": true },
-        { "id": 16133170, "isArchived": false, "name": "Clinician Portal", "billable": true },
-        { "id": 16133172, "isArchived": false, "name": "Data Migration", "billable": true },
-        { "id": 16133175, "isArchived": false, "name": "Discovery", "billable": true },
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false },
-        { "id": 16133252, "isArchived": false, "name": "Georges", "billable": true },
-        { "id": 16133184, "isArchived": false, "name": "Hypercare", "billable": true },
-        { "id": 16133194, "isArchived": false, "name": "Installation", "billable": true },
-        { "id": 16133197, "isArchived": false, "name": "Integration", "billable": true },
-        { "id": 16133198, "isArchived": false, "name": "Production & Go-Live", "billable": true },
-        { "id": 16133199, "isArchived": false, "name": "Project Initiation & Mobilisation", "billable": true },
-        { "id": 16133203, "isArchived": false, "name": "Project Management", "billable": true },
-        { "id": 16133246, "isArchived": false, "name": "System Training", "billable": true },
-        { "id": 16133221, "isArchived": false, "name": "Validation & UAT Support", "billable": true }
+        {
+          "name": "Clinical configuration"
+        },
+        {
+          "name": "Clinician Portal"
+        },
+        {
+          "name": "Data Migration"
+        },
+        {
+          "name": "Discovery"
+        },
+        {
+          "name": "General Meetings"
+        },
+        {
+          "name": "Georges"
+        },
+        {
+          "name": "Hypercare"
+        },
+        {
+          "name": "Installation"
+        },
+        {
+          "name": "Integration"
+        },
+        {
+          "name": "Production & Go-Live"
+        },
+        {
+          "name": "Project Initiation & Mobilisation"
+        },
+        {
+          "name": "Project Management"
+        },
+        {
+          "name": "System Training"
+        },
+        {
+          "name": "Validation & UAT Support"
+        }
       ]
     },
     {
-      "clientId": null,
-      "color": "color5_base",
       "name": "Sales & Marketing",
-      "description": null,
-      "id": 14435510,
-      "taskIds": [14435249, 14435229, 14434963, 15411191, 14434771, 14434850, 14435275, 15411197, 14434934, 14435231, 15411192, 15393283, 14434948, 15393265],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14435275, "isArchived": false, "name": "Account Management", "billable": true },
-        { "id": 15393283, "isArchived": false, "name": "Bid Writing", "billable": false },
-        { "id": 15411197, "isArchived": false, "name": "Digital Content Creation", "billable": false },
-        { "id": 14434948, "isArchived": false, "name": "Exhibitions & Shows", "billable": false },
-        { "id": 14434771, "isArchived": false, "name": "General Admin", "billable": false },
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false },
-        { "id": 15411192, "isArchived": false, "name": "Lead Generation", "billable": false },
-        { "id": 15411191, "isArchived": false, "name": "Market Research", "billable": false },
-        { "id": 14434963, "isArchived": false, "name": "Pathology Horizons", "billable": false },
-        { "id": 15393265, "isArchived": false, "name": "Pre sales", "billable": false },
-        { "id": 14435229, "isArchived": false, "name": "Sales - Imaging", "billable": false },
-        { "id": 14435249, "isArchived": false, "name": "Sales - Path XL", "billable": false },
-        { "id": 14435231, "isArchived": false, "name": "Sales- Ultra", "billable": false },
-        { "id": 14434934, "isArchived": false, "name": "Technical Writing", "billable": false }
+        {
+          "name": "Account Management"
+        },
+        {
+          "name": "Bid Writing"
+        },
+        {
+          "name": "Digital Content Creation"
+        },
+        {
+          "name": "Exhibitions & Shows"
+        },
+        {
+          "name": "General Admin"
+        },
+        {
+          "name": "General Meetings"
+        },
+        {
+          "name": "Lead Generation"
+        },
+        {
+          "name": "Market Research"
+        },
+        {
+          "name": "Pathology Horizons"
+        },
+        {
+          "name": "Pre sales"
+        },
+        {
+          "name": "Sales - Imaging"
+        },
+        {
+          "name": "Sales - Path XL"
+        },
+        {
+          "name": "Sales- Ultra"
+        },
+        {
+          "name": "Technical Writing"
+        }
       ]
     },
     {
-      "clientId": 14435440,
-      "color": "color1_light",
       "name": "Sciensano",
-      "description": null,
-      "id": 16131908,
-      "taskIds": [15411120, 15411107, 14434918],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434918, "isArchived": false, "name": "Customer Support- Path XL General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Path XL General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435427,
-      "color": "color1_light",
       "name": "Sherwood DCP Pilot",
-      "description": null,
-      "id": 22202343,
-      "taskIds": [16133203, 14434850, 16133175, 16133169, 16345592],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 16133169, "isArchived": false, "name": "Clinical configuration", "billable": true },
-        { "id": 16133175, "isArchived": false, "name": "Discovery", "billable": true },
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false },
-        { "id": 16345592, "isArchived": false, "name": "Product Development", "billable": false },
-        { "id": 16133203, "isArchived": false, "name": "Project Management", "billable": true }
+        {
+          "name": "Clinical configuration"
+        },
+        {
+          "name": "Discovery"
+        },
+        {
+          "name": "General Meetings"
+        },
+        {
+          "name": "Product Development"
+        },
+        {
+          "name": "Project Management"
+        }
       ]
     },
     {
-      "clientId": null,
-      "color": "color1_dark",
       "name": "Smart Nano",
-      "description": null,
-      "id": 16345409,
-      "taskIds": [16345433, 16133203, 21367469, 16345457, 16345444, 14434771, 14434850, 21367467, 14434843, 16345453, 16345441],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 16345433, "isArchived": false, "name": "AI", "billable": false },
-        { "id": 16345444, "isArchived": false, "name": "Alpha Phase", "billable": false },
-        { "id": 16345453, "isArchived": false, "name": "Beta Phase", "billable": false },
-        { "id": 21367467, "isArchived": false, "name": "DP Application", "billable": false },
-        { "id": 21367469, "isArchived": false, "name": "DP Platform", "billable": false },
-        { "id": 14434771, "isArchived": false, "name": "General Admin", "billable": false },
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false },
-        { "id": 16133203, "isArchived": false, "name": "Project Management", "billable": true },
-        { "id": 16345441, "isArchived": false, "name": "Solas DPC", "billable": false },
-        { "id": 14434843, "isArchived": false, "name": "Travel", "billable": false },
-        { "id": 16345457, "isArchived": false, "name": "Vividpath 2", "billable": false }
+        {
+          "name": "AI"
+        },
+        {
+          "name": "Alpha Phase"
+        },
+        {
+          "name": "Beta Phase"
+        },
+        {
+          "name": "DP Application"
+        },
+        {
+          "name": "DP Platform"
+        },
+        {
+          "name": "General Admin"
+        },
+        {
+          "name": "General Meetings"
+        },
+        {
+          "name": "Project Management"
+        },
+        {
+          "name": "Solas DPC"
+        },
+        {
+          "name": "Travel"
+        },
+        {
+          "name": "Vividpath 2"
+        }
       ]
     },
     {
-      "clientId": null,
-      "color": "color4_base",
       "name": "Sysops",
-      "description": null,
-      "id": 21778839,
-      "taskIds": [21778856, 21778855, 14434850, 14434771],
-      "billable": false,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 21778855, "isArchived": false, "name": "Azure", "billable": false },
-        { "id": 21778856, "isArchived": false, "name": "Devops", "billable": false },
-        { "id": 14434771, "isArchived": false, "name": "General Admin", "billable": false },
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false }
+        {
+          "name": "Azure"
+        },
+        {
+          "name": "Devops"
+        },
+        {
+          "name": "General Admin"
+        },
+        {
+          "name": "General Meetings"
+        }
       ]
     },
     {
-      "clientId": null,
-      "color": "color5_base",
       "name": "Tutor Development",
-      "description": null,
-      "id": 16345862,
-      "taskIds": [16346084, 16345518, 14434850, 16345502, 16345516, 16345503, 16345592, 16345522],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false },
-        { "id": 16345592, "isArchived": false, "name": "Product Development", "billable": false },
-        { "id": 16345502, "isArchived": false, "name": "Product Management", "billable": false },
-        { "id": 16345503, "isArchived": false, "name": "Release Management", "billable": false },
-        { "id": 16345516, "isArchived": false, "name": "Test Automation", "billable": false },
-        { "id": 16346084, "isArchived": false, "name": "UX", "billable": false },
-        { "id": 16345518, "isArchived": false, "name": "Validation", "billable": true },
-        { "id": 16345522, "isArchived": false, "name": "Verification", "billable": false }
+        {
+          "name": "General Meetings"
+        },
+        {
+          "name": "Product Development"
+        },
+        {
+          "name": "Product Management"
+        },
+        {
+          "name": "Release Management"
+        },
+        {
+          "name": "Test Automation"
+        },
+        {
+          "name": "UX"
+        },
+        {
+          "name": "Validation"
+        },
+        {
+          "name": "Verification"
+        }
       ]
     },
     {
-      "clientId": 14435444,
-      "color": "color4_darker",
       "name": "UCD",
-      "description": null,
-      "id": 16132786,
-      "taskIds": [15411120, 15411107, 14434918],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434918, "isArchived": false, "name": "Customer Support- Path XL General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Path XL General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435446,
-      "color": "color3_base",
       "name": "UHCW",
-      "description": null,
-      "id": 16132741,
-      "taskIds": [21594445, 15411120, 15411107, 14434920],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 21594445, "isArchived": false, "name": "Service Days", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Service Days"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435446,
-      "color": "color8_base",
       "name": "UHCW Cloud Upgrade 25/26",
-      "description": "Upgrade from v4.5 to v4.9 and transition to the cloud",
-      "id": 16858623,
-      "taskIds": [16133175],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
-      "tasks": [{ "id": 16133175, "isArchived": false, "name": "Discovery", "billable": true }]
+      "tasks": [
+        {
+          "name": "Discovery"
+        }
+      ]
     },
     {
-      "clientId": 14435446,
-      "color": "color6_base",
       "name": "UHCW ULTRA 4.9 Upgrade",
-      "description": null,
-      "id": 16133345,
-      "taskIds": [16133203, 16133184, 16133170, 16133197, 14434850, 16133175, 16133221, 16133169, 16133198, 16133194, 16133246, 16133172, 16133252, 16133199],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [
-          { "fieldPath": "/work/customColumns/column_1747225863016", "operator": "text_equals", "values": ["263728641", "263728642", "263728644"] }
-        ],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 16133169, "isArchived": false, "name": "Clinical configuration", "billable": true },
-        { "id": 16133170, "isArchived": false, "name": "Clinician Portal", "billable": true },
-        { "id": 16133172, "isArchived": false, "name": "Data Migration", "billable": true },
-        { "id": 16133175, "isArchived": false, "name": "Discovery", "billable": true },
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false },
-        { "id": 16133252, "isArchived": false, "name": "Georges", "billable": true },
-        { "id": 16133184, "isArchived": false, "name": "Hypercare", "billable": true },
-        { "id": 16133194, "isArchived": false, "name": "Installation", "billable": true },
-        { "id": 16133197, "isArchived": false, "name": "Integration", "billable": true },
-        { "id": 16133198, "isArchived": false, "name": "Production & Go-Live", "billable": true },
-        { "id": 16133199, "isArchived": false, "name": "Project Initiation & Mobilisation", "billable": true },
-        { "id": 16133203, "isArchived": false, "name": "Project Management", "billable": true },
-        { "id": 16133246, "isArchived": false, "name": "System Training", "billable": true },
-        { "id": 16133221, "isArchived": false, "name": "Validation & UAT Support", "billable": true }
+        {
+          "name": "Clinical configuration"
+        },
+        {
+          "name": "Clinician Portal"
+        },
+        {
+          "name": "Data Migration"
+        },
+        {
+          "name": "Discovery"
+        },
+        {
+          "name": "General Meetings"
+        },
+        {
+          "name": "Georges"
+        },
+        {
+          "name": "Hypercare"
+        },
+        {
+          "name": "Installation"
+        },
+        {
+          "name": "Integration"
+        },
+        {
+          "name": "Production & Go-Live"
+        },
+        {
+          "name": "Project Initiation & Mobilisation"
+        },
+        {
+          "name": "Project Management"
+        },
+        {
+          "name": "System Training"
+        },
+        {
+          "name": "Validation & UAT Support"
+        }
       ]
     },
     {
-      "clientId": 14435445,
-      "color": "color9_dark",
       "name": "UHN",
-      "description": null,
-      "id": 16132783,
-      "taskIds": [15411120, 15411107, 14434920],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435442,
-      "color": "color4_dark",
       "name": "UKNEQAS Molpath",
-      "description": null,
-      "id": 16131928,
-      "taskIds": [15411120, 15411107, 14434918],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434918, "isArchived": false, "name": "Customer Support- Path XL General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Path XL General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435455,
-      "color": "color4_base",
       "name": "UPMC",
-      "description": null,
-      "id": 16132820,
-      "taskIds": [15411120, 15411107, 14434918],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434918, "isArchived": false, "name": "Customer Support- Path XL General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Path XL General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": null,
-      "color": "color4_darker",
       "name": "Ultra Development",
-      "description": null,
-      "id": 16345545,
-      "taskIds": [16346084, 16345518, 14434850, 16345502, 16345516, 16345503, 16345592, 16345522],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false },
-        { "id": 16345592, "isArchived": false, "name": "Product Development", "billable": false },
-        { "id": 16345502, "isArchived": false, "name": "Product Management", "billable": false },
-        { "id": 16345503, "isArchived": false, "name": "Release Management", "billable": false },
-        { "id": 16345516, "isArchived": false, "name": "Test Automation", "billable": false },
-        { "id": 16346084, "isArchived": false, "name": "UX", "billable": false },
-        { "id": 16345518, "isArchived": false, "name": "Validation", "billable": true },
-        { "id": 16345522, "isArchived": false, "name": "Verification", "billable": false }
+        {
+          "name": "General Meetings"
+        },
+        {
+          "name": "Product Development"
+        },
+        {
+          "name": "Product Management"
+        },
+        {
+          "name": "Release Management"
+        },
+        {
+          "name": "Test Automation"
+        },
+        {
+          "name": "UX"
+        },
+        {
+          "name": "Validation"
+        },
+        {
+          "name": "Verification"
+        }
       ]
     },
     {
-      "clientId": 14435447,
-      "color": "color1_base",
       "name": "University of Cambridge",
-      "description": null,
-      "id": 16132712,
-      "taskIds": [15411120, 15411107, 14434918],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434918, "isArchived": false, "name": "Customer Support- Path XL General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Path XL General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435448,
-      "color": "color1_base",
       "name": "University of Copenhagen",
-      "description": null,
-      "id": 16131984,
-      "taskIds": [15411120, 15411107, 14434918],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434918, "isArchived": false, "name": "Customer Support- Path XL General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Path XL General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435449,
-      "color": "color4_dark",
       "name": "University of Exeter",
-      "description": null,
-      "id": 16132817,
-      "taskIds": [15411120, 15411107, 14434918],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434918, "isArchived": false, "name": "Customer Support- Path XL General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Path XL General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435450,
-      "color": "color9_dark",
       "name": "University of Nebraska",
-      "description": null,
-      "id": 16131983,
-      "taskIds": [15411120, 15411107, 14434918],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434918, "isArchived": false, "name": "Customer Support- Path XL General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Path XL General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435454,
-      "color": "color3_base",
       "name": "University of Westminister",
-      "description": null,
-      "id": 16131981,
-      "taskIds": [15411120, 15411107, 14434918],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434918, "isArchived": false, "name": "Customer Support- Path XL General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Path XL General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435443,
-      "color": "color9_base",
       "name": "Utrecht University",
-      "description": null,
-      "id": 16131945,
-      "taskIds": [15411120, 15411107, 14434918],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434918, "isArchived": false, "name": "Customer Support- Path XL General", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Path XL General"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": 14435456,
-      "color": "color5_light",
       "name": "Virtus",
-      "description": null,
-      "id": 16131962,
-      "taskIds": [21594445, 15411120, 15411107, 14434920],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434920, "isArchived": false, "name": "Customer Support- Ultra General", "billable": true },
-        { "id": 21594445, "isArchived": false, "name": "Service Days", "billable": true },
-        { "id": 15411107, "isArchived": false, "name": "Ticket Review", "billable": false },
-        { "id": 15411120, "isArchived": false, "name": "Triage", "billable": false }
+        {
+          "name": "Customer Support- Ultra General"
+        },
+        {
+          "name": "Service Days"
+        },
+        {
+          "name": "Ticket Review"
+        },
+        {
+          "name": "Triage"
+        }
       ]
     },
     {
-      "clientId": null,
-      "color": "color4_darker",
       "name": "Xplore Development",
-      "description": null,
-      "id": 16345866,
-      "taskIds": [16346084, 16345518, 14434850, 16345502, 16345516, 16345503, 16345592, 16345522],
-      "billable": true,
-      "audienceSelector": {
-        "instructions": [{ "fieldPath": "/internal/lifecycleStatus", "operator": "text_equals", "values": ["employed"] }],
-        "explicitEmployees": []
-      },
       "tasks": [
-        { "id": 14434850, "isArchived": false, "name": "General Meetings", "billable": false },
-        { "id": 16345592, "isArchived": false, "name": "Product Development", "billable": false },
-        { "id": 16345502, "isArchived": false, "name": "Product Management", "billable": false },
-        { "id": 16345503, "isArchived": false, "name": "Release Management", "billable": false },
-        { "id": 16345516, "isArchived": false, "name": "Test Automation", "billable": false },
-        { "id": 16346084, "isArchived": false, "name": "UX", "billable": false },
-        { "id": 16345518, "isArchived": false, "name": "Validation", "billable": true },
-        { "id": 16345522, "isArchived": false, "name": "Verification", "billable": false }
+        {
+          "name": "General Meetings"
+        },
+        {
+          "name": "Product Development"
+        },
+        {
+          "name": "Product Management"
+        },
+        {
+          "name": "Release Management"
+        },
+        {
+          "name": "Test Automation"
+        },
+        {
+          "name": "UX"
+        },
+        {
+          "name": "Validation"
+        },
+        {
+          "name": "Verification"
+        }
       ]
     }
   ]
