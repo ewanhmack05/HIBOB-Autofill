@@ -1,16 +1,23 @@
 # HiBob Project Filler
 
-A Chrome extension that saves your **Project**, **Project task**, and **Reason** in a popup and auto-fills the HiBob Attendance modal (uses the reliable “type → ArrowDown → Enter” commit flow). Includes a checkbox to enable automatic filling when the modal opens, plus a **Fill Now** action and keyboard shortcut.
+A Chrome (MV3) extension that remembers your **Project**, **Project task**, and **Reason**, and auto-fills the HiBob Attendance modal. It supports **autosuggest** as you type, a fixed **Reason** dropdown, and ⭐ **Favourites** you can one-click to instantly fill the modal.
 
 ---
 
 ## Features
 
-- 🔁 One-click **Fill Now** (or auto-fill when the modal appears)
-- 📝 Remembers **Project**, **Project task**, **Reason**
+- ⚡ **Fill Now** button + optional **auto-fill when the modal opens**
+- 🧠 **Autosuggest** for Project/Task (from a local `static-projects.json`)
+- 🗂️ **Favourites**: save current Project/Task/Reason as chips; click a chip to **auto-fill immediately**
+- ✅ **Reason** is a dropdown with 3 options:
+  - Manual Entry
+  - Forgot to clock in
+  - Other, see notes
+- 🎨 Custom toolbar icon (teal **H**, `rgb(70,136,136)`)
+
 ---
 
-## Folder Structure
+## Folder structure
 
 ```
 hibob-project-filler/
@@ -19,74 +26,147 @@ hibob-project-filler/
 ├─ content.js
 ├─ popup.html
 ├─ popup.js
-└─ icon128.png
+├─ static-projects.json
+└─ icons/
+   ├─ icon16.png
+   ├─ icon32.png
+   ├─ icon48.png
+   └─ icon128.png
 ```
 
-> Use the matching files from this repo; they are designed to work together.
-
 ---
 
-## Requirements
+## Install (Load Unpacked)
 
-- Google Chrome (or Chromium-based browser) with **Manifest V3** support
+1. Go to `chrome://extensions/`
+2. Enable **Developer mode**
+3. Click **Load unpacked** and select the project folder
+4. (Optional) Pin the extension to the toolbar
 
----
-
-## Installation (Load Unpacked)
-
-1. Open Chrome and navigate to `chrome://extensions/`
-2. Toggle **Developer mode** (top-right)
-3. Click **Load unpacked**
-4. Select the project folder (`hibob-project-filler/`)
-5. The extension icon should appear in the toolbar (pin it if you like)
-
-> After editing any file, click **Reload** on the extension card to apply changes.
-
-
-https://github.com/user-attachments/assets/2de3ee26-8b9a-48d2-8e5f-d3cdfbadfd25
-
+> After editing files, click **Reload** on the extension card.
 
 ---
 
 ## Usage
 
 1. Click the extension icon to open the popup.
-2. Fill in:
-   - **Project** (textbox; shows suggestions if available)
-   - **Project task** (suggestions filter after you enter a Project)
-   - **Reason**
-3. (Optional) Check **Enable auto-fill** to fill automatically when the HiBob modal opens.
-4. Click **Save Settings**.
-5. Click **Fill Now** to run it on the current HiBob page.
+2. Type to select a **Project** and **Project task** (autosuggest helps).
+3. Choose a **Reason** from the dropdown.
+4. (Optional) Toggle **Enable auto-fill** (fills automatically when the HiBob modal opens).
+5. Click **Save Settings** or hit **Fill Now** to apply to the current HiBob page.
 
-### Context Menu
+### Favourites (fast switching)
 
-- Right-click on a HiBob page → **Fill HiBob Project**
+- Click **⭐ Save current as favourite** to add a chip.
+- Click a **chip** to:
+  1) load its Project/Task/Reason,  
+  2) save them,  
+  3) **auto-fill the modal**, and  
+  4) close the popup.
+- Click **×** on a chip to remove it.
 
 ---
 
-## How the Autofill Works
+## Data source: `static-projects.json`
 
-`content.js` types your saved values, waits briefly, then sends **ArrowDown → Enter** to commit the dropdowns (matches manual selection). It retries a few times with short delays to handle UI animation.
+Autosuggest uses a local file so no network tapping is required. The expected shape:
 
+```json
+{
+  "results": [
+    {
+      "name": "Project A",
+      "tasks": [
+        { "name": "Task 1" },
+        { "name": "Task 2" }
+      ]
+    },
+    {
+      "name": "Project B",
+      "tasks": []
+    }
+  ]
+}
+```
 
-Reload the extension after changing this value.
+> Keep **only** `name` fields (projects and tasks). Archived/IDs/billable/etc. are not needed.
 
-https://github.com/user-attachments/assets/625f5939-0b9a-4168-a798-e3f7a042ae67
+---
+
+## Icon
+
+Place teal **H** icons here:
+
+```
+icons/icon16.png
+icons/icon32.png
+icons/icon48.png
+icons/icon128.png
+```
+
+Update `manifest.json`:
+
+```json
+{
+  "action": {
+    "default_title": "HiBob Project Filler",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
+```
+
+---
+
+## Permissions (why they’re needed)
+
+- `storage` — save your selections, favourites, and cached data
+- `scripting` — inject the content script if needed (fallback)
+- `activeTab` — send a message to the current tab to trigger fill
+- `tabs` — query the active tab for Fill Now
+- `contextMenus` — right-click **Fill HiBob Project** menu
+
+> You can remove `webRequest` if you’re not doing any network interception.
+
+---
+
+## How the autofill works
+
+`content.js` finds the **Project**, **Project task**, and **Reason** controls, types your values, then commits selection with a reliable **ArrowDown → Enter** pattern (plus change/input events). It retries with small delays to survive UI animations.
+
+**Tuning:** if your tenant’s UI is especially slow, bump the delays in `content.js`:
+
+```js
+// content.js (examples)
+const SLOW_DELAY = 340;              // pause after typing before commit
+const TYPE_TO_COMMIT_RETRIES = 5;    // retries if value didn't stick
+const BETWEEN_RETRIES_MS = 180;      // pause between retries
+```
 
 ---
 
 ## Privacy
 
 - No data leaves your machine.
-- The extension only reads network info while you’re on `app.hibob.com`.
-- Data is stored in Chrome’s extension storage (`sync` for small values, `local` for cached lists).
+- With the static projects file, no request listening is required.
+- Data lives in Chrome extension storage (`sync` for small values, `local` for caches).
 
 ---
 
-## Development Tips
-- If dropdowns are flaky, tune `SLOW_DELAY` (and related constants) in `content.js`.
-```js
-// content.js
-const SLOW_DELAY = 160; // try 220–300 if needed
-```
+## Troubleshooting
+
+- **Modal doesn’t fill**: open the modal first; if still stuck, click **Fill Now**.
+- **Suggestions not showing**: check `static-projects.json` format (see example above).
+- **Slow dropdowns**: increase `SLOW_DELAY` and retry counts in `content.js`.
+- **Favourite clicked but nothing happens**: ensure the HiBob timesheet page is the active tab when you click the chip.
+
+---
