@@ -1,17 +1,13 @@
 # HiBob Project Filler
 
-A Chrome extension that saves your **Project**, **Project task**, and **Reason** in a popup and auto-fills the HiBob Attendance modal (uses the reliable “type → ArrowDown → Enter” commit flow, a.k.a. v7 behavior). Includes a checkbox to enable automatic filling when the modal opens, plus a **Fill Now** action and keyboard shortcut.
+A Chrome extension that saves your **Project**, **Project task**, and **Reason** in a popup and auto-fills the HiBob Attendance modal (uses the reliable “type → ArrowDown → Enter” commit flow). Includes a checkbox to enable automatic filling when the modal opens, plus a **Fill Now** action and keyboard shortcut.
 
 ---
 
 ## Features
 
 - 🔁 One-click **Fill Now** (or auto-fill when the modal appears)
-- ⌨️ Robust dropdown commit: **ArrowDown → Enter** with retries/delays
 - 📝 Remembers **Project**, **Project task**, **Reason**
-- ✅ Optional live suggestions in the popup (when background has cached lists)
-- ⚙️ Minimal, local-only storage; no external servers
-
 ---
 
 ## Folder Structure
@@ -73,19 +69,10 @@ https://github.com/user-attachments/assets/2de3ee26-8b9a-48d2-8e5f-d3cdfbadfd25
 
 `content.js` types your saved values, waits briefly, then sends **ArrowDown → Enter** to commit the dropdowns (matches manual selection). It retries a few times with short delays to handle UI animation.
 
-If your page is slower, increase the delay:
-
-```js
-// content.js
-const SLOW_DELAY = 160; // try 220–300 if needed
-```
 
 Reload the extension after changing this value.
 
 https://github.com/user-attachments/assets/625f5939-0b9a-4168-a798-e3f7a042ae67
-
-
-
 
 ---
 
@@ -99,3 +86,7 @@ https://github.com/user-attachments/assets/625f5939-0b9a-4168-a798-e3f7a042ae67
 
 ## Development Tips
 - If dropdowns are flaky, tune `SLOW_DELAY` (and related constants) in `content.js`.
+```js
+// content.js
+const SLOW_DELAY = 160; // try 220–300 if needed
+```
