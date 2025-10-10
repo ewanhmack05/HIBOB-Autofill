@@ -1,12 +1,9 @@
-// === popup.js (hardcoded projects + custom autosuggest) ===
+// === popup.js (hardcoded projects + custom autosuggest + reason select) ===
 
-// Normalizer
 const byNorm = (s) => (s || "").trim().toLowerCase();
 
-// Data cache
-let PROJECTS_CACHE = []; // [{ name, tasks: [{ name, isArchived? }] }]
+let PROJECTS_CACHE = [];
 
-// Elements
 const elProject = document.getElementById("project");
 const elTask = document.getElementById("task");
 const elReason = document.getElementById("reason");
@@ -14,7 +11,6 @@ const elToggle = document.getElementById("autoFillCheckbox");
 const elSave = document.getElementById("save");
 const elFill = document.getElementById("fill");
 const elStatus = document.getElementById("status");
-
 const sugProject = document.getElementById("projectSuggest");
 const sugTask = document.getElementById("taskSuggest");
 
@@ -24,13 +20,13 @@ async function loadSettings() {
   const toggle = typeof data.autofillModal === "boolean" ? data.autofillModal : !!data.autoFillEnabled;
   elProject.value = data.project || "";
   elTask.value = data.task || "";
-  elReason.value = data.reason || "";
+  elReason.value = data.reason || ""; // select will default if empty
   elToggle.checked = toggle;
 }
 async function saveSettings() {
   const project = elProject.value.trim();
   const task = elTask.value.trim();
-  const reason = elReason.value.trim();
+  const reason = elReason.value; // from select
   const toggle = elToggle.checked;
   await chrome.storage.sync.set({ project, task, reason, autofillModal: toggle, autoFillEnabled: toggle });
 }
@@ -86,11 +82,9 @@ function makeAutosuggest(inputEl, panelEl, provider, onChoose) {
     panelEl.innerHTML = "";
     active = -1;
   }
-
   function open() {
     panelEl.classList.add("open");
   }
-
   function render(list) {
     panelEl.innerHTML = "";
     list.slice(0, MAX).forEach((text, idx) => {
@@ -106,7 +100,6 @@ function makeAutosuggest(inputEl, panelEl, provider, onChoose) {
       panelEl.appendChild(div);
     });
   }
-
   function choose(index) {
     if (index < 0 || index >= items.length) return;
     const value = items[index];
@@ -114,7 +107,6 @@ function makeAutosuggest(inputEl, panelEl, provider, onChoose) {
     onChoose?.(value);
     close();
   }
-
   function recompute() {
     const q = inputEl.value;
     const list = provider(q) || [];
@@ -128,16 +120,9 @@ function makeAutosuggest(inputEl, panelEl, provider, onChoose) {
     open();
   }
 
-  inputEl.addEventListener("input", () => {
-    recompute();
-  });
-  inputEl.addEventListener("focus", () => {
-    recompute();
-  });
-  inputEl.addEventListener("blur", () => {
-    // Delay so click can register
-    setTimeout(close, 120);
-  });
+  inputEl.addEventListener("input", recompute);
+  inputEl.addEventListener("focus", recompute);
+  inputEl.addEventListener("blur", () => setTimeout(close, 120));
   inputEl.addEventListener("keydown", (e) => {
     const opened = panelEl.classList.contains("open");
     if (!opened && (e.key === "ArrowDown" || e.key === "ArrowUp")) {
@@ -145,7 +130,6 @@ function makeAutosuggest(inputEl, panelEl, provider, onChoose) {
       return;
     }
     if (!opened) return;
-
     if (e.key === "ArrowDown") {
       e.preventDefault();
       active = Math.min(active + 1, Math.min(items.length, MAX) - 1);
@@ -171,13 +155,10 @@ function projectProvider(query) {
   const q = byNorm(query);
   const names = PROJECTS_CACHE.map((p) => p.name);
   if (!q) return names.slice(0, 20);
-
-  // Prioritize startsWith, then includes
   const starts = names.filter((n) => byNorm(n).startsWith(q));
   const includes = names.filter((n) => !byNorm(n).startsWith(q) && byNorm(n).includes(q));
   return [...starts, ...includes];
 }
-
 function taskProviderFactory(getProjectName) {
   return function taskProvider(query) {
     const proj = PROJECTS_CACHE.find((p) => byNorm(p.name) === byNorm(getProjectName()));
@@ -196,10 +177,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   await loadHardcodedProjects();
 
   // Project autosuggest
-  makeAutosuggest(elProject, sugProject, projectProvider, (value) => {
-    // when project chosen, clear task so user can pick a valid one
-    elTask.value = "";
-  });
+  makeAutosuggest(
+    elProject,
+    sugProject,
+    projectProvider,
+    () => {
+      elTask.value = "";
+    } // reset task when project changes
+  );
 
   // Task autosuggest depends on selected project
   makeAutosuggest(
@@ -209,7 +194,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     () => {}
   );
 
-  // Save/Fill
   elSave.addEventListener("click", async () => {
     await saveSettings();
     window.close();

@@ -29,96 +29,31 @@
       box-shadow: var(--shadow);
       padding: 14px;
     }
-    h3 {
-      margin: 0 0 8px 0;
-      font-size: 16px;
-      letter-spacing: 0.2px;
+    h3 { margin: 0 0 8px 0; font-size: 16px; letter-spacing: .2px; }
+    .field { margin-top: 12px; position: relative; }
+    label { display: block; font-weight: 600; font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+    .input, select.input {
+      width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border);
+      background: #fff; font-size: 14px; outline: none; transition: border-color .15s, box-shadow .15s;
     }
-    .field {
-      margin-top: 12px;
-      position: relative; /* for suggestion panel */
-    }
-    label {
-      display: block;
-      font-weight: 600;
-      font-size: 12px;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-    .input {
-      width: 100%;
-      padding: 10px 12px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: #fff;
-      font-size: 14px;
-      outline: none;
-      transition: border-color .15s, box-shadow .15s;
-    }
-    .input:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(70,136,136,0.12);
-    }
-    textarea.input { resize: vertical; min-height: 72px; }
-
-    /* Suggestion panel */
+    .input:focus, select.input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(70,136,136,0.12); }
     .suggest {
-      position: absolute;
-      z-index: 9999;
-      left: 0; right: 0; top: calc(100% + 6px);
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      box-shadow: var(--shadow);
-      max-height: 220px;
-      overflow: auto;
-      padding: 4px;
-      display: none; /* toggled via JS */
+      position: absolute; z-index: 9999; left: 0; right: 0; top: calc(100% + 6px);
+      background: #fff; border: 1px solid var(--border); border-radius: 10px; box-shadow: var(--shadow);
+      max-height: 220px; overflow: auto; padding: 4px; display: none;
     }
     .suggest.open { display: block; }
-    .option {
-      padding: 8px 10px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 14px;
-      line-height: 1.2;
-    }
-    .option:hover,
-    .option.active {
-      background: #f0f7f7;
-    }
-    .muted {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 8px;
-    }
-    .row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-top: 12px;
-    }
+    .option { padding: 8px 10px; border-radius: 8px; cursor: pointer; font-size: 14px; line-height: 1.2; }
+    .option:hover, .option.active { background: #f0f7f7; }
+    .muted { font-size: 12px; color: var(--muted); margin-top: 8px; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
     .btn {
-      appearance: none;
-      border: 1px solid var(--border);
-      background: #fff;
-      padding: 10px 12px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background .15s, border-color .15s, transform .02s;
+      appearance: none; border: 1px solid var(--border); background: #fff; padding: 10px 12px;
+      border-radius: 8px; cursor: pointer; font-weight: 600; transition: background .15s, border-color .15s, transform .02s;
     }
     .btn:active { transform: translateY(1px); }
-    .btn.primary {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
-    }
-    .toggle {
-      display: flex; align-items: center; gap: 8px; margin-top: 10px;
-      color: var(--muted);
-      font-size: 13px;
-    }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .toggle { display: flex; align-items: center; gap: 8px; margin-top: 10px; color: var(--muted); font-size: 13px; }
   </style>
 </head>
 <body>
@@ -139,7 +74,12 @@
 
     <div class="field">
       <label for="reason">Reason</label>
-      <textarea id="reason" class="input" placeholder="e.g. Forgot to Clock In" rows="3"></textarea>
+      <select id="reason" class="input">
+        <option value="">Select a reason…</option>
+        <option>Manual Entry</option>
+        <option>Forgot to clock in</option>
+        <option>Other, see notes</option>
+      </select>
     </div>
 
     <label class="toggle">
