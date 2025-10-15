@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
 	"name": "HiBob Project Filler",
-	"version": "1.3.40",
+	"version": "1.4.3",
 	"description": "Auto-fills HiBob Project, Project task, and Reason when the modal opens. Robust retries + settle delays.",
 
 	"permissions": ["storage", "scripting", "activeTab", "contextMenus", "webRequest"],

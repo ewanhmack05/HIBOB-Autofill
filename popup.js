@@ -76,11 +76,19 @@ async function saveSettings() {
 
 // ---------- Fill ----------
 
+
 async function triggerFill() {
 	const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 	if (!tab?.id) return;
 
-	chrome.tabs.sendMessage(tab.id, { type: "FILL_HIBOB" }, async () => {
+	const data = {
+		type: "FILL_HIBOB",
+		project: elProject.value.trim(),
+		task: elTask.value.trim(),
+		reason: elReason.value.trim(),
+	};
+
+	chrome.tabs.sendMessage(tab.id, data, async () => {
 		if (chrome.runtime.lastError?.message?.includes("Receiving end does not exist")) {
 			try {
 				await chrome.scripting.executeScript({
@@ -88,13 +96,14 @@ async function triggerFill() {
 					files: ["content.js"],
 				});
 				console.log("Injected content.js");
-				chrome.tabs.sendMessage(tab.id, { type: "FILL_HIBOB" });
+				chrome.tabs.sendMessage(tab.id, data);
 			} catch (e) {
 				console.error("Failed to inject content.js", e);
 			}
 		}
 	});
 }
+
 
 
 // ---------- Hardcoded projects ----------

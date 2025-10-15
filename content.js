@@ -163,8 +163,11 @@ async function setDropdown(labelText, valueText, root = document) {
 	return { label: labelText, ok };
 }
 
-async function fillHiBob(root = document) {
-	const { project, task, reason } = await chrome.storage.sync.get(["project", "task", "reason"]);
+async function fillHiBob(root = document, overrides = {}) {
+	const stored = await chrome.storage.sync.get(["project", "task", "reason"]);
+  const project = overrides.project ?? stored.project;
+  const task = overrides.task ?? stored.task;
+  const reason = overrides.reason ?? stored.reason;
 	const results = [];
 	if (project) results.push(await setDropdown("Project", project, root));
 	if (task) results.push(await setDropdown("Project task", task, root));
@@ -248,7 +251,8 @@ chrome.storage.onChanged.addListener((changes, area) => {
 // Manual trigger
 chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
 	if (msg?.type === "FILL_HIBOB") {
-		fillHiBob().then(sendResponse);
+		const { project, task, reason } = msg;
+		fillHiBob(document, { project, task, reason }).then(sendResponse);
 		return true;
 	}
 });
