@@ -7,7 +7,7 @@ const elProject = document.getElementById("project");
 const elTask = document.getElementById("task");
 const elReason = document.getElementById("reason");
 const elToggle = document.getElementById("autoFillCheckbox");
-const elSave = document.getElementById("save");
+const elSave = document.getElementById("saveSettingsBtn");
 const elFill = document.getElementById("fill");
 const elStatus = document.getElementById("status");
 const sugProject = document.getElementById("projectSuggest");
@@ -75,18 +75,27 @@ async function saveSettings() {
 }
 
 // ---------- Fill ----------
+
 async function triggerFill() {
 	const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 	if (!tab?.id) return;
+
 	chrome.tabs.sendMessage(tab.id, { type: "FILL_HIBOB" }, async () => {
 		if (chrome.runtime.lastError?.message?.includes("Receiving end does not exist")) {
 			try {
-				await chrome.scripting.executeScript({ target: { tabId: tab.id }, files: ["content.js"] });
+				await chrome.scripting.executeScript({
+					target: { tabId: tab.id },
+					files: ["content.js"],
+				});
+				console.log("Injected content.js");
 				chrome.tabs.sendMessage(tab.id, { type: "FILL_HIBOB" });
-			} catch {}
+			} catch (e) {
+				console.error("Failed to inject content.js", e);
+			}
 		}
 	});
 }
+
 
 // ---------- Hardcoded projects ----------
 async function loadHardcodedProjects() {
