@@ -1,42 +1,25 @@
 # HiBob Project Filler
 
-A Chrome (MV3) extension that remembers your **Project**, **Project task**, and **Reason**, and auto-fills the HiBob Attendance modal. It supports **autosuggest** as you type, a fixed **Reason** dropdown, and ⭐ **Favourites** you can one-click to instantly fill the modal.
+A Chrome (MV3) extension that remembers your **Project**, **Project task**, and **Reason**, and auto-fills the HiBob Attendance modal. It supports **autosuggest**, a fixed **Reason** dropdown, and ⭐ **Favourites** for instant reuse.
 
 ---
 
 ## Features
 
-- ⚡ **Fill Now** button + optional **auto-fill when the modal opens**
-- 🧠 **Autosuggest** for Project/Task (from a local `static-projects.json`)
-- 🗂️ **Favourites**: save current Project/Task/Reason as chips; click a chip to **auto-fill immediately**
-- ✅ **Reason** is a dropdown with 3 options:
+- Fill Now button + optional auto-fill when the modal opens
+- Autosuggest for Project/Task (from `static-projects.json`)
+- Favourites: click to auto-fill a saved Project/Task/Reason combo
+- Reason is a dropdown with 3 options:
+
   - Manual Entry
   - Forgot to clock in
   - Other, see notes
-- 🎨 Custom toolbar icon (teal **H**, `rgb(70,136,136)`)
+
+- Custom toolbar icon (teal H, `rgb(70,136,136)`)
 
 ---
 
-## Folder structure
-
-```
-hibob-project-filler/
-├─ manifest.json
-├─ background.js
-├─ content.js
-├─ popup.html
-├─ popup.js
-├─ static-projects.json
-└─ icons/
-   ├─ icon16.png
-   ├─ icon32.png
-   ├─ icon48.png
-   └─ icon128.png
-```
-
----
-
-## Install (Load Unpacked)
+## Install (Chrome)
 
 1. Go to `chrome://extensions/`
 2. Enable **Developer mode**
@@ -49,124 +32,78 @@ hibob-project-filler/
 
 ## Usage
 
-1. Click the extension icon to open the popup.
-2. Type to select a **Project** and **Project task** (autosuggest helps).
-3. Choose a **Reason** from the dropdown.
-4. (Optional) Toggle **Enable auto-fill** (fills automatically when the HiBob modal opens).
-5. Click **Save Settings** or hit **Fill Now** to apply to the current HiBob page.
+1. Click the extension icon
+2. Type/select a **Project** and **Project task** (autosuggest enabled)
+3. Choose a **Reason** from the dropdown
+4. (Optional) Enable **auto-fill** when the modal opens
+5. Click **Save Settings** or **Fill Now**
 
-### Favourites (fast switching)
+### Favourites
 
-- Click **⭐ Save current as favourite** to add a chip.
-- Click a **chip** to:
-  1) load its Project/Task/Reason,  
-  2) save them,  
-  3) **auto-fill the modal**, and  
-  4) close the popup.
-- Click **×** on a chip to remove it.
+- Click ⭐ to save current combo
+- Click a chip to auto-fill and close popup
+- Remove a chip by clicking ×
 
 ---
 
 ## Data source: `static-projects.json`
 
-Autosuggest uses a local file so no network tapping is required. The expected shape:
+Local-only data source for autosuggestions. Shape:
 
 ```json
 {
-  "results": [
-    {
-      "name": "Project A",
-      "tasks": [
-        { "name": "Task 1" },
-        { "name": "Task 2" }
-      ]
-    },
-    {
-      "name": "Project B",
-      "tasks": []
-    }
-  ]
+	"results": [
+		{ "name": "Project A", "tasks": [{ "name": "Task 1" }, { "name": "Task 2" }] },
+		{ "name": "Project B", "tasks": [] }
+	]
 }
 ```
 
-> Keep **only** `name` fields (projects and tasks). Archived/IDs/billable/etc. are not needed.
+> Keep only the `name` fields.
 
 ---
 
-## Icon
+## Permissions explained
 
-Place teal **H** icons here:
-
-```
-icons/icon16.png
-icons/icon32.png
-icons/icon48.png
-icons/icon128.png
-```
-
-Update `manifest.json`:
-
-```json
-{
-  "action": {
-    "default_title": "HiBob Project Filler",
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "icons/icon16.png",
-      "32": "icons/icon32.png"
-    }
-  },
-  "icons": {
-    "16": "icons/icon16.png",
-    "32": "icons/icon32.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
-  }
-}
-```
+- `storage` — store settings and favourites
+- `scripting` — inject autofill logic if needed
+- `activeTab` — target the current HiBob tab
+- `tabs` — used to trigger script execution
+- `contextMenus` — adds right-click autofill
 
 ---
 
-## Permissions (why they’re needed)
+## Autofill logic (inside `content.js`)
 
-- `storage` — save your selections, favourites, and cached data
-- `scripting` — inject the content script if needed (fallback)
-- `activeTab` — send a message to the current tab to trigger fill
-- `tabs` — query the active tab for Fill Now
-- `contextMenus` — right-click **Fill HiBob Project** menu
+Finds and types into:
 
-> You can remove `webRequest` if you’re not doing any network interception.
+- **Project**
+- **Project task**
+- **Reason**
 
----
-
-## How the autofill works
-
-`content.js` finds the **Project**, **Project task**, and **Reason** controls, types your values, then commits selection with a reliable **ArrowDown → Enter** pattern (plus change/input events). It retries with small delays to survive UI animations.
-
-**Tuning:** if your tenant’s UI is especially slow, bump the delays in `content.js`:
+Uses retries, settle delays, and simulated keyboard interaction:
 
 ```js
-// content.js (examples)
-const SLOW_DELAY = 340;              // pause after typing before commit
-const TYPE_TO_COMMIT_RETRIES = 5;    // retries if value didn't stick
-const BETWEEN_RETRIES_MS = 180;      // pause between retries
+const SLOW_DELAY = 340; // pause before commit
+const TYPE_TO_COMMIT_RETRIES = 5; // retries if not accepted
+const BETWEEN_RETRIES_MS = 180; // delay between retries
 ```
 
 ---
 
 ## Privacy
 
-- No data leaves your machine.
-- With the static projects file, no request listening is required.
-- Data lives in Chrome extension storage (`sync` for small values, `local` for caches).
+- No data leaves your machine
+- No remote logging or API calls
+- Only local extension storage used
 
 ---
 
 ## Troubleshooting
 
-- **Modal doesn’t fill**: open the modal first; if still stuck, click **Fill Now**.
-- **Suggestions not showing**: check `static-projects.json` format (see example above).
-- **Slow dropdowns**: increase `SLOW_DELAY` and retry counts in `content.js`.
-- **Favourite clicked but nothing happens**: ensure the HiBob timesheet page is the active tab when you click the chip.
+- ❌ Modal doesn’t fill: click **Fill Now** or reload the HiBob page first
+- ❌ Suggestions missing: check `static-projects.json` format
+- ❌ Slow inputs: increase `SLOW_DELAY` in `content.js`
+- ❌ Favourite doesn’t apply: make sure HiBob is the **active tab**
 
 ---
