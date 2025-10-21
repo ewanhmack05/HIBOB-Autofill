@@ -1,6 +1,4 @@
 // === background.js (minimal, textbox mode) ===
-
-// Keys we might read if a content script caches project data (safe even if empty)
 const CACHE_KEYS = ["hibobProjectsCache", "hibobProjects"]; // new then legacy
 
 // Small helpers
@@ -36,7 +34,6 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 				return;
 			}
 
-			// We don't fetch/refresh from the SW in textbox mode
 			if (msg && msg.type === "REFRESH_HIBOB_PROJECTS") {
 				sendResponse({
 					ok: false,

@@ -212,10 +212,6 @@ select.input:focus {
   border-color: black !important;
 }
 
-/* ─────────────────────────────────────────────────────────────── */
-/* CUSTOM ADDITIONS FOR YOUR REQUESTED FEATURES */
-
-/* 1) Grey out the task field more clearly when disabled */
 #task.input:disabled {
   background-color: #f0f0f0;
   color: #888 !important;
@@ -225,12 +221,10 @@ select.input:focus {
   color: #aaaaaa;
 }
 
-/* 2) Make checkbox tick green */
 .toggle input[type="checkbox"] {
   accent-color: var(--accent);
 }
 
-/* 3) Grey out buttons when disabled */
 .btn:disabled {
   background: #e9ecef;
   border-color: #dcdfe3;
@@ -282,7 +276,6 @@ select.input:focus {
   background: #cfcfcf;
 }
 
-/* 5) Hover state for "Save as favourite" button */
 .favBtn:hover {
   background: #eef6f6;
   border-color: #468888;
@@ -291,7 +284,6 @@ select.input:focus {
   transition: all 0.15s ease;
 }
 
-/* 6) Hover state for saved chips */
 .chip:hover {
   background: #e0f1f1;
   border-color: #b6dede;

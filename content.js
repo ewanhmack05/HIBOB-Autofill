@@ -1,4 +1,3 @@
-// v7: More robust auto-fill with retries + settle times
 function norm(s) {
 	return s?.replace(/\s+/g, " ").trim().toLowerCase();
 }
@@ -100,7 +99,6 @@ function chooseOptionByText(text, root) {
 }
 
 function controlDisplayText(control) {
-	// many libs render selected value as textContent of the control
 	return (control.textContent || "").trim();
 }
 
@@ -165,9 +163,9 @@ async function setDropdown(labelText, valueText, root = document) {
 
 async function fillHiBob(root = document, overrides = {}) {
 	const stored = await chrome.storage.sync.get(["project", "task", "reason"]);
-  const project = overrides.project ?? stored.project;
-  const task = overrides.task ?? stored.task;
-  const reason = overrides.reason ?? stored.reason;
+	const project = overrides.project ?? stored.project;
+	const task = overrides.task ?? stored.task;
+	const reason = overrides.reason ?? stored.reason;
 	const results = [];
 	if (project) results.push(await setDropdown("Project", project, root));
 	if (task) results.push(await setDropdown("Project task", task, root));
@@ -207,9 +205,9 @@ async function handleModal(modalRoot) {
 	} catch (e) {}
 }
 
-// --- Watcher control (NEW) ---
+// --- Watcher control ---
 function startWatching() {
-	if (mo) return; // already running
+	if (mo) return;
 	mo = new MutationObserver((muts) => {
 		for (const m of muts) {
 			for (const n of m.addedNodes) {

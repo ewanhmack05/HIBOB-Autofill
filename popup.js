@@ -1,4 +1,3 @@
-// === popup.js (clean rebuild with autosuggest, favourites, validation, clear buttons) ===
 const byNorm = (s) => (s || "").trim().toLowerCase();
 let PROJECTS_CACHE = []; // [{ name, tasks: [{ name, isArchived? }] }]
 
@@ -76,7 +75,6 @@ async function saveSettings() {
 
 // ---------- Fill ----------
 
-
 async function triggerFill() {
 	const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 	if (!tab?.id) return;
@@ -103,8 +101,6 @@ async function triggerFill() {
 		}
 	});
 }
-
-
 
 // ---------- Hardcoded projects ----------
 async function loadHardcodedProjects() {
