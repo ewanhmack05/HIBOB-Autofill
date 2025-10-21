@@ -21,7 +21,7 @@ A Chrome (MV3) extension that remembers your **Project**, **Project task**, and 
 
 ## Install (Chrome)
 
-1. Go to `chrome://extensions/`
+1. Go to `chrome://extensions/` (`edge://extensions/` on Edge)
 2. Enable **Developer mode**
 3. Click **Load unpacked** and select the project folder
 4. (Optional) Pin the extension to the toolbar
