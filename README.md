@@ -21,12 +21,16 @@ A Chrome (MV3) extension that remembers your **Project**, **Project task**, and 
 
 ## Install (Chrome)
 
-1. Go to `chrome://extensions/`
+1. Go to `chrome://extensions/` (`edge://extensions/` on Edge)
 2. Enable **Developer mode**
 3. Click **Load unpacked** and select the project folder
 4. (Optional) Pin the extension to the toolbar
 
 > After editing files, click **Reload** on the extension card.
+
+## Video Tutorial 
+https://github.com/user-attachments/assets/31419634-37da-4d32-8378-4037dd0c9930
+
 
 ---
 
@@ -37,6 +41,11 @@ A Chrome (MV3) extension that remembers your **Project**, **Project task**, and 
 3. Choose a **Reason** from the dropdown
 4. (Optional) Enable **auto-fill** when the modal opens
 5. Click **Save Settings** or **Fill Now**
+
+## Usage Video
+https://github.com/user-attachments/assets/e8787c71-e57f-4f07-b764-4b1a04915c1d
+
+
 
 ### Favourites
 
