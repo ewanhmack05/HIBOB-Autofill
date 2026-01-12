@@ -9,11 +9,9 @@ const SETTLE_AFTER_MODAL_MS = 250; // wait after modal mounts
 const TYPE_TO_COMMIT_RETRIES = 5; // open+type+enter retries if value didn't stick
 const BETWEEN_RETRIES_MS = 180; // pause between retries
 
-// --- Toggle + observer state (NEW) ---
-let autofillEnabled = false; // controls ONLY automatic modal watching
-let mo = null; // MutationObserver instance (so we can disconnect)
+let autofillEnabled = false;
+let mo = null;
 
-// --- Finders ---
 function findControlByLabel(labelText, root = document) {
 	const want = norm(labelText);
 	for (const lab of root.querySelectorAll("label")) {
@@ -30,7 +28,9 @@ function findControlByLabel(labelText, root = document) {
 			if (near) return near;
 		}
 	}
-	const aria = root.querySelector(`select[aria-label="${labelText}"], [role="combobox"][aria-label="${labelText}"], [aria-haspopup="listbox"][aria-label="${labelText}"]`);
+	const aria = root.querySelector(
+		`select[aria-label="${labelText}"], [role="combobox"][aria-label="${labelText}"], [aria-haspopup="listbox"][aria-label="${labelText}"]`
+	);
 	if (aria) return aria;
 	const ph = root.querySelector(`select[placeholder="${labelText}"], [role="combobox"][placeholder="${labelText}"]`);
 	if (ph) return ph;
@@ -121,7 +121,6 @@ async function openTypeCommit(control, text) {
 		}
 		await new Promise((r) => setTimeout(r, 30));
 	}
-	// fallback plain list
 	const ok = chooseOptionByText(text, listbox);
 	control.dispatchEvent(new Event("input", { bubbles: true }));
 	control.dispatchEvent(new Event("change", { bubbles: true }));
@@ -129,7 +128,6 @@ async function openTypeCommit(control, text) {
 }
 
 async function setAriaDropdownSearchable(control, text) {
-	const before = controlDisplayText(control);
 	for (let attempt = 1; attempt <= TYPE_TO_COMMIT_RETRIES; attempt++) {
 		await openTypeCommit(control, text);
 		await new Promise((r) => setTimeout(r, 160));
@@ -161,15 +159,43 @@ async function setDropdown(labelText, valueText, root = document) {
 	return { label: labelText, ok };
 }
 
+function findSaveButton(root = document) {
+	const scope = root || document;
+	const candidates = Array.from(scope.querySelectorAll("button.primary.medium, button.primary"));
+	const byText = candidates.find((btn) => norm(btn.textContent) === "save");
+	if (byText) return byText;
+
+	const anyButtons = Array.from(scope.querySelectorAll("button"));
+	return anyButtons.find((btn) => norm(btn.textContent) === "save") || null;
+}
+
+async function clickSaveIfEnabled(root, autoClockIn, results) {
+	if (!autoClockIn) return;
+
+	const projectOk = results.find((r) => norm(r.label) === "project")?.ok;
+	const taskOk = results.find((r) => norm(r.label) === "project task")?.ok;
+	if (!projectOk || !taskOk) return;
+
+	const button = findSaveButton(root);
+	if (!button) return;
+
+	await new Promise((r) => setTimeout(r, 120));
+	button.click();
+}
+
 async function fillHiBob(root = document, overrides = {}) {
-	const stored = await chrome.storage.sync.get(["project", "task", "reason"]);
+	const stored = await chrome.storage.sync.get(["project", "task", "reason", "autoClockIn"]);
 	const project = overrides.project ?? stored.project;
 	const task = overrides.task ?? stored.task;
 	const reason = overrides.reason ?? stored.reason;
+	const autoClockIn = overrides.autoClockIn ?? stored.autoClockIn;
+
 	const results = [];
 	if (project) results.push(await setDropdown("Project", project, root));
 	if (task) results.push(await setDropdown("Project task", task, root));
 	if (reason) results.push(await setDropdown("Reason", reason, root));
+
+	await clickSaveIfEnabled(root, !!autoClockIn, results);
 	return results;
 }
 
@@ -191,7 +217,7 @@ function modalContainsLabels(modalRoot) {
 
 async function handleModal(modalRoot) {
 	if (!modalRoot || modalRoot === lastHandledModal) return;
-	await new Promise((r) => setTimeout(r, SETTLE_AFTER_MODAL_MS)); // let animation/layout settle
+	await new Promise((r) => setTimeout(r, SETTLE_AFTER_MODAL_MS));
 
 	const start = performance.now();
 	while (performance.now() - start < 6000 && !modalContainsLabels(modalRoot)) {
@@ -205,14 +231,14 @@ async function handleModal(modalRoot) {
 	} catch (e) {}
 }
 
-// --- Watcher control ---
 function startWatching() {
 	if (mo) return;
 	mo = new MutationObserver((muts) => {
 		for (const m of muts) {
 			for (const n of m.addedNodes) {
 				if (isModal(n) || (n.querySelector && n.querySelector('[role="dialog"],[aria-modal],.modal,.MuiDialog-root,.ant-modal,.select__menu'))) {
-					const modalRoot = isModal(n) ? n : (n.querySelector && n.querySelector('[role="dialog"],[aria-modal],.modal,.MuiDialog-root,.ant-modal')) || n;
+					const modalRoot =
+						(isModal(n) && n) || (n.querySelector && (n.querySelector('[role="dialog"],[aria-modal],.modal,.MuiDialog-root,.ant-modal') || n)) || n;
 					handleModal(modalRoot);
 				}
 			}
@@ -220,7 +246,6 @@ function startWatching() {
 	});
 	mo.observe(document.documentElement, { childList: true, subtree: true });
 
-	// If a modal is already open, handle it once
 	const initialModal = document.querySelector('[role="dialog"],[aria-modal],.modal,.MuiDialog-root,.ant-modal');
 	if (initialModal) handleModal(initialModal);
 }
@@ -232,7 +257,6 @@ function stopWatching() {
 	}
 }
 
-// --- Init: read toggle, start/stop watcher accordingly (NEW) ---
 chrome.storage.sync.get(["autofillModal"]).then(({ autofillModal }) => {
 	autofillEnabled = !!autofillModal;
 	if (autofillEnabled) startWatching();
@@ -246,11 +270,10 @@ chrome.storage.onChanged.addListener((changes, area) => {
 	}
 });
 
-// Manual trigger
 chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
 	if (msg?.type === "FILL_HIBOB") {
-		const { project, task, reason } = msg;
-		fillHiBob(document, { project, task, reason }).then(sendResponse);
+		const { project, task, reason, autoClockIn } = msg;
+		fillHiBob(document, { project, task, reason, autoClockIn }).then(sendResponse);
 		return true;
 	}
 });

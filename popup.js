@@ -6,6 +6,7 @@ const elProject = document.getElementById("project");
 const elTask = document.getElementById("task");
 const elReason = document.getElementById("reason");
 const elToggle = document.getElementById("autoFillCheckbox");
+const elAutoClockIn = document.getElementById("autoClockInCheckbox");
 const elSave = document.getElementById("saveSettingsBtn");
 const elFill = document.getElementById("fill");
 const elStatus = document.getElementById("status");
@@ -52,19 +53,32 @@ function wireClearButtons() {
 
 // ---------- Settings ----------
 async function loadSettings() {
-	const data = await chrome.storage.sync.get(["project", "task", "reason", "autofillModal", "autoFillEnabled"]);
+	const data = await chrome.storage.sync.get(["project", "task", "reason", "autofillModal", "autoFillEnabled", "autoClockIn"]);
+
 	const toggle = typeof data.autofillModal === "boolean" ? data.autofillModal : !!data.autoFillEnabled;
+
 	elProject.value = data.project || "";
 	elTask.value = data.task || "";
 	elReason.value = data.reason || "";
 	elToggle.checked = toggle;
+	elAutoClockIn.checked = !!data.autoClockIn;
 }
+
 async function saveSettings() {
 	const project = elProject.value.trim();
 	const task = elTask.value.trim();
 	const reason = elReason.value;
 	const toggle = elToggle.checked;
-	await chrome.storage.sync.set({ project, task, reason, autofillModal: toggle, autoFillEnabled: toggle });
+	const autoClockIn = elAutoClockIn.checked;
+
+	await chrome.storage.sync.set({
+		project,
+		task,
+		reason,
+		autofillModal: toggle,
+		autoFillEnabled: toggle,
+		autoClockIn,
+	});
 
 	// Notify the active tab to start/stop watching immediately
 	const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -74,7 +88,6 @@ async function saveSettings() {
 }
 
 // ---------- Fill ----------
-
 async function triggerFill() {
 	const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 	if (!tab?.id) return;
@@ -84,6 +97,7 @@ async function triggerFill() {
 		project: elProject.value.trim(),
 		task: elTask.value.trim(),
 		reason: elReason.value.trim(),
+		autoClockIn: elAutoClockIn.checked,
 	};
 
 	chrome.tabs.sendMessage(tab.id, data, async () => {
@@ -140,7 +154,6 @@ function makeAutosuggest(inputEl, panelEl, provider, onChoose) {
 		active = -1;
 	}
 	function open() {
-		// Close other open suggestion panels
 		document.querySelectorAll(".suggest").forEach((p) => {
 			if (p !== panelEl) p.classList.remove("open");
 		});
@@ -338,7 +351,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 	await loadSettings();
 	await loadHardcodedProjects();
 
-	// Autosuggest
 	makeAutosuggest(elProject, sugProject, projectProvider, () => {
 		elTask.value = "";
 		validateFields();
@@ -350,18 +362,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 		() => {}
 	);
 
-	// Favourites
 	elFavSave.addEventListener("click", saveFavouriteFromCurrent);
 	renderFavourites(await readFavourites());
 
-	// Toggle live hint: prevent both suggests open at once
 	elTask.addEventListener("focus", () => {
 		if (!elProject.value.trim()) {
 			elProject.classList.add("error");
 		}
 	});
 
-	// Save/Fill buttons
 	elSave.addEventListener("click", async () => {
 		if (elSave.disabled) {
 			showErrors();
@@ -379,13 +388,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 		window.close();
 	});
 
-	// Field events
 	elProject.addEventListener("input", validateFields);
 	elTask.addEventListener("input", validateFields);
 
-	// Clear buttons
 	wireClearButtons();
-
-	// Initial
 	validateFields();
 });
